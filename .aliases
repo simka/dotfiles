@@ -1,0 +1,18 @@
+# cd shortcuts
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+# better safe than sorry
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
+# list
+alias la='ls -AF'     # all files
+alias ld='ls -d */'   # only directories
+alias ll='ls -lhA'     # all with details
+
+
+# pacman and yaourt
+alias update='yaourt -Syu --aur'
