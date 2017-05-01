@@ -16,3 +16,7 @@ alias ll='ls -lhA'     # all with details
 
 # pacman and yaourt
 alias update='yaourt -Syu --aur'
+alias backup-pkgs='pacman -Qqe > /home/simka/Dropbox/pkglist.txt'
+
+# other
+alias symlink-music='cp -as /mnt/data/muzyka/* /home/simka/Muzyka'
