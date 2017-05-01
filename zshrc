@@ -14,5 +14,8 @@ fi
 # autojump
 source /etc/profile.d/autojump.zsh
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # aliases
 source ~/.aliases
