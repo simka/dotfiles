@@ -19,3 +19,6 @@ source /etc/profile.d/autojump.zsh
 
 # aliases
 source ~/.aliases
+
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
