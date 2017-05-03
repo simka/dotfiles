@@ -34,29 +34,46 @@ browser = chromium
 # emit escape sequences for other keys modified by Control
 #modify_other_keys = false
 
-# theme converted from https://github.com/sindresorhus/hyper-snazzy
+# gruvbox colors
 
 [colors]
-background = #1e1f28
-foreground = #ebece6
-cursor = #e4e4e4
+# hard contrast: background = #1d2021
+background = #282828
+# soft contrast: background = #32302f
+foreground = #ebdbb2
+foreground_bold = #ebdbb2
 
-color0 = #000
-color1 = #fb4245
-color2 = #50fa7b
-color3 = #f0fa8b
-color4 = #49b9fe
-color5 = #fb4cb3
-color6 = #8be9fd
-color7 = #ededec
-color8 = #555555
-color9 = #fb4245
-color10 = #50fa7b
-color11 = #f0fa8b
-color12 = #49b9fe
-color13 = #fb4cb3
-color14 = #8be9fd
-color15 = #ededec
+# dark0 + gray
+color0 = #282828
+color8 = #928374
+
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
+
+# neutral_green + bright_green
+color2 = #98971a
+color10 = #b8bb26
+
+# neutral_yellow + bright_yellow
+color3 = #d79921
+color11 = #fabd2f
+
+# neutral_blue + bright_blue
+color4 = #458588
+color12 = #83a598
+
+# neutral_purple + bright_purple
+color5 = #b16286
+color13 = #d3869b
+
+# neutral_aqua + faded_aqua
+color6 = #689d6a
+color14 = #8ec07c
+
+# light4 + light1
+color7 = #a89984
+color15 = #ebdbb2
 
 [hints]
 #font = Monospace 12
