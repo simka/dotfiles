@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Yggdroot/indentLine'
 " javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -24,9 +25,18 @@ syntax on
 set number
 " javascript settings
 let g:jsx_ext_required = 0
-let g:used_javascript_libs = 'jquery,underscore,react' 
+let g:used_javascript_libs = 'jquery,underscore,react'
 
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
 " Current file in nerdtree
 map <F9> :NERDTreeFind<CR>
+
+" whitespace
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" make indentLine use colorscheme color
+let g:indentLine_setColors = 0
