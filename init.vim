@@ -8,6 +8,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
 " javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
