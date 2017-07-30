@@ -9,11 +9,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
-" javascript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'elzr/vim-json'
-Plug 'othree/javascript-libraries-syntax.vim'
 
 call plug#end()
 
@@ -25,9 +20,6 @@ let g:airline_theme='gruvbox'
 
 syntax on
 set number
-" javascript settings
-let g:jsx_ext_required = 0
-let g:used_javascript_libs = 'jquery,underscore,react'
 
 " Toggle nerdtree with F10
 map <F10> :NERDTreeToggle<CR>
