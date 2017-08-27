@@ -34,46 +34,53 @@ browser = chromium
 # emit escape sequences for other keys modified by Control
 #modify_other_keys = false
 
-# gruvbox colors
-
 [colors]
-# hard contrast: background = #1d2021
-background = #282828
-# soft contrast: background = #32302f
-foreground = #ebdbb2
-foreground_bold = #ebdbb2
+# Dracula Theme
 
-# dark0 + gray
-color0 = #282828
-color8 = #928374
+foreground      = #f8f8f2
+foreground_bold = #f8f8f2
+cursor          = #f8f8f2
+background      = #282a36
 
-# neutral_red + bright_red
-color1 = #cc241d
-color9 = #fb4934
+# 16 color space
 
-# neutral_green + bright_green
-color2 = #98971a
-color10 = #b8bb26
+# Black, Gray, Silver, White
+color0  = #282a36
+color8  = #6272a4
+color7  = #f8f8f2
+color15 = #f8f8f2
 
-# neutral_yellow + bright_yellow
-color3 = #d79921
-color11 = #fabd2f
+# Red
+color1  = #ff5555
+color9  = #ff5555
 
-# neutral_blue + bright_blue
-color4 = #458588
-color12 = #83a598
+# Green
+color2  = #50fa7b
+color10 = #50fa7b
 
-# neutral_purple + bright_purple
-color5 = #b16286
-color13 = #d3869b
+# Yellow
+color3  = #f1fa8c
+color11 = #f1fa8c
 
-# neutral_aqua + faded_aqua
-color6 = #689d6a
-color14 = #8ec07c
+# Blue
+color4  = #8be9fd
+color12 = #8be9fd
 
-# light4 + light1
-color7 = #a89984
-color15 = #ebdbb2
+# Purple
+color5  =#bd93f9
+color13 = #bd93f9
+
+# Pink
+color6  = #ff79c6
+color14 = #ff79c6
+
+# Extra colors
+color16 = #ff79c6
+color17 = #50fa7b
+color18 = #44475a
+color19 = #6272a4
+color20 = #8be9fd
+color21 = #f8f8f2
 
 [hints]
 #font = Monospace 12

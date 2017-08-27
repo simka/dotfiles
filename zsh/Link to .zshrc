@@ -1,0 +1,1 @@
+/home/simka/dotfiles/zsh/.zshrc
