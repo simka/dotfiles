@@ -1,0 +1,86 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+markup=none
+align=center
+separator=false
+separator_block_width=5
+
+#separator
+full_text=〈 
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+label=
+#instance=/mnt/data
+interval=30
+
+[separator]
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+label=
+interval=10
+
+[separator]
+
+[load_average]
+label=
+interval=5
+
+[separator]
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+[volume]
+label=
+instance=Master
+#instance=PCM
+interval=once
+signal=10
+
+[separator]
+
+# Date Time
+#
+[time]
+command=date '+%d/%m/%Y %H:%M:%S'
+label=
+interval=1
+
+[separator]
