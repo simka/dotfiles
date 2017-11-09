@@ -27,7 +27,6 @@ let g:indentLine_leadingSpaceChar = '·'
 
 " navigation and files
 Plug 'justinmk/vim-dirvish'
-" Plug 'tpope/vim-vinegar' " netrw enhancement
 Plug 'tpope/vim-eunuch' " file management
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy search
