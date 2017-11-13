@@ -36,15 +36,13 @@ zplug "lukechilds/zsh-nvm"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 
 # PROMPT
-autoload -Uz compinit promptinit
-promptinit
+autoload -U promptinit; promptinit
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-PURE_PROMPT_SYMBOL=φ
+PURE_PROMPT_SYMBOL=λ
 PURE_GIT_DOWN_ARROW=▼
 PURE_GIT_UP_ARROW=▲
 PURE_CMD_MAX_EXEC_TIME=10
-prompt pure
 
 # COMPLETION
 autoload -Uz compinit
