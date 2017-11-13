@@ -22,6 +22,7 @@ Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'steelsojka/deoplete-flow'
+Plug 'sjl/gundo.vim' " visual undo tree
 Plug 'romainl/Apprentice'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
@@ -80,6 +81,8 @@ call plug#end()
   set hlsearch " highlight search matches
   set ignorecase " case insensitive search if query is lowercase
   set smartcase
+
+  set undofile " persistent undo
 " }}}
 
 " COMMANDS {{{
@@ -97,6 +100,8 @@ call plug#end()
   nmap <Leader>ff :Files<CR>
   nmap <Leader>g :Rg
   nmap <leader>n :enew<CR>
+  nmap <leader>u :GundoToggle<CR>
+  nnoremap <esc><esc> :nohlsearch<CR>
 " }}}
 
 " PLUGINS' SETTINGS {{{
@@ -117,6 +122,9 @@ call plug#end()
   let g:ale_fix_on_save = 1
   let g:ale_sign_warning = '▲'
   let g:ale_sign_error = '✖'
+
+  " gundo
+  let g:gundo_prefer_python3 = 1
 
   " goyo
   augroup Goyo
