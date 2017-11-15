@@ -24,7 +24,7 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'steelsojka/deoplete-flow'
 Plug 'sjl/gundo.vim' " visual undo tree
 Plug 'romainl/Apprentice'
-Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -54,9 +54,10 @@ call plug#end()
 
 " SETTINGS/UI {{{
   " look and feel
+  set termguicolors
   syntax on
-  "let g:nord_uniform_diff_background = 1
-  color dracula
+  set background=dark
+  colorscheme gruvbox
   set number relativenumber
   set cursorline " highlight current line
   set list
@@ -101,6 +102,7 @@ call plug#end()
   nmap <Leader>ep <Plug>(ale_previous_wrap)
   nmap <Leader>en <Plug>(ale_next_wrap)
   nnoremap <esc><esc> :nohlsearch<CR>
+  inoremap jk <esc>
 " }}}
 
 " PLUGINS' SETTINGS {{{
@@ -157,7 +159,7 @@ call plug#end()
 
   " lightline
   let g:lightline = {
-  \ 'colorscheme': 'Dracula',
+  \ 'colorscheme': 'gruvbox',
   \ 'active': {
   \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
   \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
