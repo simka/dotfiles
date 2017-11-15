@@ -24,7 +24,7 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'steelsojka/deoplete-flow'
 Plug 'sjl/gundo.vim' " visual undo tree
 Plug 'romainl/Apprentice'
-Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim'
 Plug 'itchyny/lightline.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -45,9 +45,6 @@ call plug#end()
 
     autocmd BufWritePre * :%s/\s\+$//e " remove whitespace on save
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " disable comment on newline
-    autocmd FocusLost * call autosave#AutoSave()
-    autocmd BufLeave * let b:winview = winsaveview() " preserve cursor position
-    autocmd BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 
     autocmd User ALELint call statusline#MaybeUpdateLightline() " update lightline on linter change
 
@@ -58,8 +55,8 @@ call plug#end()
 " SETTINGS/UI {{{
   " look and feel
   syntax on
-  let g:nord_uniform_diff_background = 1
-  colorscheme nord
+  "let g:nord_uniform_diff_background = 1
+  color dracula
   set number relativenumber
   set cursorline " highlight current line
   set list
@@ -99,8 +96,10 @@ call plug#end()
   nmap <Leader>fl :Lines<CR>
   nmap <Leader>ff :Files<CR>
   nmap <Leader>g :Rg
-  nmap <leader>n :enew<CR>
-  nmap <leader>u :GundoToggle<CR>
+  nmap <Leader>n :enew<CR>
+  nmap <Leader>u :GundoToggle<CR>
+  nmap <Leader>ep <Plug>(ale_previous_wrap)
+  nmap <Leader>en <Plug>(ale_next_wrap)
   nnoremap <esc><esc> :nohlsearch<CR>
 " }}}
 
@@ -117,9 +116,13 @@ call plug#end()
   let g:deoplete#sources#ternjs#filetypes = ['jsx', 'react.js']
 
   " ale
+  let g:ale_linters = {
+  \   'javascript': ['eslint'],
+  \}
   let g:ale_fixers = { 'javascript': ['eslint', 'prettier'] }
   let g:ale_javascript_pretier_options = '--single-quote --trailing-comma all'
   let g:ale_fix_on_save = 1
+  let g:ale_sign_column_always = 1
   let g:ale_sign_warning = '▲'
   let g:ale_sign_error = '✖'
 
@@ -154,7 +157,7 @@ call plug#end()
 
   " lightline
   let g:lightline = {
-  \ 'colorscheme': 'nord',
+  \ 'colorscheme': 'Dracula',
   \ 'active': {
   \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
   \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
