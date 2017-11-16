@@ -1,44 +1,38 @@
-source ~/.zplug/init.zsh
+source ~/antigen.zsh
+
+# work stuff
+if [ "$OSTYPE"="darwin"* ]; then
+  antigen bundle osx
+  antigen bundle brew
+fi
+
+antigen bundle ssh-agent
+antigen bundle git
+antigen bundle node
+antigen bundle npm
+antigen bundle rupa/z
+antigen bundle lukechilds/zsh-nvm
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+
+antigen apply
 
 # HISTORY
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
-# VARIABLES
-export EDITOR='nvim'
-export BROWSER='chromium'
-
 # SOURCE THINGS
-source ~/dotfiles/scripts/most.sh
-
-# Z - https://github.com/rupa/z
-. ~/z/z.sh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
-# PLUGINS
-zplug "chrissicool/zsh-256color"
-zplug "djui/alias-tips"
-zplug "peterhurford/git-it-on.zsh"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "lib/git", from:oh-my-zsh
-
-zplug "zsh-users/zsh-autosuggestions"
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
-zplug "zsh-users/zsh-history-substring-search"
-
-NVM_LAZY_LOAD=true
-zplug "lukechilds/zsh-nvm"
-zplug "lukechilds/zsh-better-npm-completion", defer:2
-
 # PROMPT
 autoload -U promptinit; promptinit
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 PURE_PROMPT_SYMBOL=λ
 PURE_GIT_DOWN_ARROW=▼
 PURE_GIT_UP_ARROW=▲
@@ -54,6 +48,11 @@ setopt COMPLETE_ALIASES
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# VARIABLES
+export EDITOR='nvim'
+export BROWSER='chromium'
+export PAGER="most"
+
 # ALIASES
 alias vi='nvim'
 alias vim='nvim'
@@ -66,12 +65,3 @@ alias la='ls -AF'          # all files
 alias ld='ls -d */'        # only directories
 alias ll='exa -lagh --git' # all with details
 
-# install plugins if listed and not installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
