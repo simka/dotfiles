@@ -10,22 +10,19 @@ Plug 'tpope/vim-commentary' " comments enhancement
 Plug 'tpope/vim-eunuch' " file management
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy search
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim' " distraction-free mode
-Plug 'junegunn/limelight.vim' " dim paragraphs other than current
 Plug 'airblade/vim-gitgutter' " show git diff in gutter
 Plug 'Raimondi/delimitMate' " auto-closing brackets, parens etc.
-Plug 'Yggdroot/indentLine' " show indentation
-Plug 'justinmk/vim-dirvish'
-Plug 'qpkorr/vim-bufkill' " close buffers with BD without closing window
-Plug 'christoomey/vim-tmux-navigator' " tmux pane integration
-Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'justinmk/vim-dirvish' " netrw replacement
+Plug 'w0rp/ale' " linting
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'steelsojka/deoplete-flow'
+Plug 'qpkorr/vim-bufkill' " close buffers with BD without closing window
+Plug 'romainl/vim-cool' " autohide search highlight when not searching
+Plug 'christoomey/vim-tmux-navigator' " tmux pane integration
 Plug 'sjl/gundo.vim' " visual undo tree
-Plug 'romainl/Apprentice'
-Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
+
+" languages
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -33,6 +30,15 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'elzr/vim-json'
+
+" eye candy
+Plug 'mhinz/vim-startify'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'joshdick/onedark.vim'
+Plug 'romainl/Apprentice'
 call plug#end()
 
 " DEFAULTS {{{
@@ -54,10 +60,9 @@ call plug#end()
 
 " SETTINGS/UI {{{
   " look and feel
-  set termguicolors
   syntax on
-  set background=dark
-  colorscheme gruvbox
+  let g:onedark_termcolors=16
+  colorscheme onedark
   set number relativenumber
   set cursorline " highlight current line
   set list
@@ -101,7 +106,6 @@ call plug#end()
   nmap <Leader>u :GundoToggle<CR>
   nmap <Leader>ep <Plug>(ale_previous_wrap)
   nmap <Leader>en <Plug>(ale_next_wrap)
-  nnoremap <esc><esc> :nohlsearch<CR>
   inoremap jk <esc>
 " }}}
 
@@ -121,7 +125,7 @@ call plug#end()
   let g:ale_linters = {
   \   'javascript': ['eslint'],
   \}
-  let g:ale_fixers = { 'javascript': ['eslint', 'prettier'] }
+  let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
   let g:ale_javascript_pretier_options = '--single-quote --trailing-comma all'
   let g:ale_fix_on_save = 1
   let g:ale_sign_column_always = 1
@@ -159,7 +163,7 @@ call plug#end()
 
   " lightline
   let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'onedark',
   \ 'active': {
   \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
   \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
