@@ -1,28 +1,49 @@
 let mapleader = "\<space>" " map leader key to space
 
+" PLUGINS {{{
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-sensible' " sensible defaults
-Plug 'tpope/vim-unimpaired' " handy bracket mappings
-Plug 'tpope/vim-repeat' " include surround, commentary and unimpaired plugin maps when repeating cmd with .
-Plug 'tpope/vim-fugitive' " git wrapper
-Plug 'tpope/vim-surround' " quoting/parenthesizing enhancements
-Plug 'tpope/vim-commentary' " comments enhancement
-Plug 'tpope/vim-eunuch' " file management
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy search
+" Utils {{{
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+Plug 'mhinz/vim-startify' " start screen
+Plug 'junegunn/goyo.vim' " focus mode
+Plug 'junegunn/limelight.vim' " focus mode
+Plug 'kopischke/vim-fetch' " go to line when opening file
+Plug 'sjl/gundo.vim' " visual undo tree
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'qpkorr/vim-bufkill' " close buffers with BD without closing window
+Plug 'romainl/vim-cool' " hide search highlight when not searching
+" }}}
+" Colorscheme {{{
+Plug 'itchyny/lightline.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'joshdick/onedark.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+" }}}
+" File manipulation {{{
+Plug 'tpope/vim-eunuch'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter' " show git diff in gutter
-Plug 'Raimondi/delimitMate' " auto-closing brackets, parens etc.
-Plug 'justinmk/vim-dirvish' " netrw replacement
-Plug 'w0rp/ale' " linting
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
+Plug 'justinmk/vim-dirvish'
+" }}}
+" Text manipulation {{{
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+" }}}
+" Linting and completion {{{
+Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'steelsojka/deoplete-flow'
-Plug 'qpkorr/vim-bufkill' " close buffers with BD without closing window
-Plug 'romainl/vim-cool' " autohide search highlight when not searching
-Plug 'christoomey/vim-tmux-navigator' " tmux pane integration
-Plug 'sjl/gundo.vim' " visual undo tree
-
-" languages
+" }}}
+" Git {{{
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+" }}}
+" Languages {{{
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -30,156 +51,171 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'elzr/vim-json'
-
-" eye candy
-Plug 'mhinz/vim-startify'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'jnurmine/Zenburn'
-Plug 'joshdick/onedark.vim'
-Plug 'romainl/Apprentice'
-call plug#end()
-
-" DEFAULTS {{{
-  if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading
-  endif
-
-  augroup defaults
-    autocmd!
-
-    autocmd BufWritePre * :%s/\s\+$//e " remove whitespace on save
-    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " disable comment on newline
-
-    autocmd User ALELint call statusline#MaybeUpdateLightline() " update lightline on linter change
-
-    autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown " markdown
-  augroup END
 " }}}
-
-" SETTINGS/UI {{{
-  " look and feel
-  syntax on
-  let g:onedark_termcolors=16
-  colorscheme onedark
-  set number relativenumber
-  set cursorline " highlight current line
-  set list
-  set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-  set title " window title = filename
-  set lazyredraw " redraw less often
-  set noshowmode " hide mode indicator, since airline shows it
-  set splitbelow " more natural splits
-  set splitright
-  set hidden " allow modified buffers to be hidden
-  set clipboard^=unnamed " use system clipboard
-
-  " indent, whitespace etc.
-  set shiftwidth=2
-  set softtabstop=2
-  set expandtab
-
-  " search
-  set hlsearch " highlight search matches
-  set ignorecase " case insensitive search if query is lowercase
-  set smartcase
-
-  set undofile " persistent undo
+call plug#end()
+" }}}
+" DEFAULTS {{{
+augroup defaults
+  autocmd!
+  autocmd User ALELint call statusline#MaybeUpdateLightline() " update lightline on linter change
+  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown " markdown
+augroup END
+" }}}
+" GENERAL {{{
+" UI {{{
+" colorscheme
+syntax on
+let g:palenight_terminal_italics=1
+let g:palenight_termcolors=16
+set background=dark
+colorscheme palenight
+" hide mode indicator
+set noshowmode
+" highlight current line
+set cursorline
+" set relative line numbers
+set number relativenumber
+" show invisibles
+set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+" sane splits
+set splitbelow splitright
+" save buffers as often as possible
+set autowriteall
+" allow hiding modified buffers
+set hidden
+" persistent undo
+set undofile
+" use system clipboard
+set clipboard^=unnamed
+" }}}
+" Indentation {{{
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+" }}}
+" Search {{{
+" highlight search matches
+set hlsearch
+" case insensitive search if query is lowercase
+set ignorecase smartcase
+" use ripgrep for grep, if availiable
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading
+endif
+" }}}
 " }}}
 
 " COMMANDS {{{
-  command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+command! -bang -nargs=* Rg
+\ call fzf#vim#grep(
+\   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+\   <bang>0 ? fzf#vim#with_preview('up:60%')
+\           : fzf#vim#with_preview('right:50%:hidden', '?'),
+\   <bang>0)
 " }}}
 
 " MAPPINGS {{{
-  nmap <Leader>fb :Buffers<CR>
-  nmap <Leader>fl :Lines<CR>
-  nmap <Leader>ff :Files<CR>
-  nmap <Leader>g :Rg
-  nmap <Leader>n :enew<CR>
-  nmap <Leader>u :GundoToggle<CR>
-  nmap <Leader>ep <Plug>(ale_previous_wrap)
-  nmap <Leader>en <Plug>(ale_next_wrap)
-  inoremap jk <esc>
+inoremap jk <esc>
+nnoremap <Leader>u :GundoToggle<CR>
+" window
+nnoremap <Leader>ws :split<CR>
+nnoremap <Leader>wv :vsplit<CR>
+" buffer
+nnoremap <Leader>bn :enew<CR>
+nnoremap <Leader>bd :BD<CR>
+" fzf
+nnoremap <Leader>sb :Buffers<CR>
+nnoremap <Leader>sl :Lines<CR>
+nnoremap <Leader>sf :Files<CR>
+" grep
+nnoremap <Leader>g :Rg 
+" ale
+nnoremap <Leader>e[ <Plug>(ale_previous_wrap)
+nnoremap <Leader>e] <Plug>(ale_next_wrap)
+" files (vim-eunuch)
+nnoremap <Leader>fd :Delete<CR>
+nnoremap <Leader>fm :Move 
+nnoremap <Leader>fw :Wall<CR>
+" git (vim-fugitive)
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gf :Gpull<CR>
 " }}}
 
 " PLUGINS' SETTINGS {{{
-  " vim-javascript
-  let g:javascript_plugin_flow = 1
-  " vim-jsx
-  let g:jsx_ext_required = 0
+" vim-javascript
+let g:javascript_plugin_flow = 1
+" vim-jsx
+let g:jsx_ext_required = 0
 
-  " deoplete
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#sources#ternjs#types = 1
-  let g:deoplete#sources#ternjs#docs = 1
-  let g:deoplete#sources#ternjs#filetypes = ['jsx', 'react.js']
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#ternjs#types = 1
+let g:deoplete#sources#ternjs#docs = 1
+let g:deoplete#sources#ternjs#filetypes = ['jsx', 'react.js']
 
-  " ale
-  let g:ale_linters = {
-  \   'javascript': ['eslint'],
-  \}
-  let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
-  let g:ale_javascript_pretier_options = '--single-quote --trailing-comma all'
-  let g:ale_fix_on_save = 1
-  let g:ale_sign_column_always = 1
-  let g:ale_sign_warning = '▲'
-  let g:ale_sign_error = '✖'
+" ale
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
+let g:ale_javascript_pretier_options = '--single-quote --trailing-comma all'
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_warning = '▲'
+let g:ale_sign_error = '✖'
 
-  " gundo
-  let g:gundo_prefer_python3 = 1
+" gundo
+let g:gundo_prefer_python3 = 1
 
-  " goyo
-  augroup Goyo
-    autocmd! User GoyoEnter Limelight 0.7
-    autocmd! User GoyoLeave Limelight!
-  augroup END
+" goyo
+augroup Goyo
+  autocmd! User GoyoEnter Limelight 0.7
+  autocmd! User GoyoLeave Limelight!
+augroup END
 
-  " fzf
-  let g:fzf_colors =
-  \ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+" fzf
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+\ 'bg':      ['bg', 'Normal'],
+\ 'hl':      ['fg', 'Comment'],
+\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+\ 'hl+':     ['fg', 'Statement'],
+\ 'info':    ['fg', 'PreProc'],
+\ 'border':  ['fg', 'Ignore'],
+\ 'prompt':  ['fg', 'Conditional'],
+\ 'pointer': ['fg', 'Exception'],
+\ 'marker':  ['fg', 'Keyword'],
+\ 'spinner': ['fg', 'Label'],
+\ 'header':  ['fg', 'Comment'] }
 
-  " indentLine
-  let g:indentLine_char = '¦'
-  let g:indentLine_leadingSpaceChar = '·'
+" indentLine
+let g:indentLine_char = '¦'
+let g:indentLine_leadingSpaceChar = '·'
 
-  " lightline
-  let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ 'active': {
-  \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
-  \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'fugitive#head'
-  \ },
-  \ 'component_expand': {
-  \   'linter_warnings': 'statusline#LightlineLinterWarnings',
-  \   'linter_errors': 'statusline#LightlineLinterErrors',
-  \   'linter_ok': 'statusline#LightlineLinterOK'
-  \ },
-  \ 'component_type': {
-  \   'readonly': 'error',
-  \   'linter_warnings': 'warning',
-  \   'linter_errors': 'error'
-  \ },
-  \ }
+" lightline
+let g:lightline = {
+\ 'colorscheme': 'onedark',
+\ 'active': {
+\   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
+\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+\ },
+\ 'component_function': {
+\   'gitbranch': 'fugitive#head'
+\ },
+\ 'component_expand': {
+\   'linter_warnings': 'statusline#LightlineLinterWarnings',
+\   'linter_errors': 'statusline#LightlineLinterErrors',
+\   'linter_ok': 'statusline#LightlineLinterOK'
+\ },
+\ 'component_type': {
+\   'readonly': 'error',
+\   'linter_warnings': 'warning',
+\   'linter_errors': 'error'
+\ },
+\ }
 " }}}

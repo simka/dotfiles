@@ -1,0 +1,28 @@
+*cursorColor: #DCDCCC
+!! Zenburn
+*background: #3a3a3a
+*foreground: #dcdccc
+! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #222222
+! DarkRed + Red
+*color1:  #e89393
+*color9:  #dca3a3
+! DarkGreen + Green
+*color2: #688060
+*color10:  #7f9f7f
+! DarkYellow + Yellow
+*color3:  #f0dfaf
+*color11: #efef8f
+! DarkBlue + Blue
+*color4:  #93b3a3
+*color12: #6abeb1
+! DarkMangenta + Mangenta
+*color5:  #bca3a3
+*color13: #c0bed1
+!DarkCyan + Cyan (both not tango)
+*color6:  #93b3a3
+*color14: #8cd0d3
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff

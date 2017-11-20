@@ -1,7 +1,7 @@
 # ~/.tmuxinator/default.yml
 
-name: cyberspace7
-root: ~/
+name: wittr
+root: ~/code/wittr
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,7 +19,7 @@ root: ~/
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: "get shit done"
+startup_window: "vim"
 
 # Specitifes (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -31,24 +31,12 @@ startup_window: "get shit done"
 # post: tmux -CC attach -t default
 
 windows:
-  - health:
-      layout: tiled
+  - vim:
+      layout: main-horizontal
       panes:
-        - systemctl --failed
-        - journalctl -p 3 -xb
-        - htop
-  - get shit done:
-      layout: main-vertical
-      panes:
-        - newsbeuter
-        - neomutt
-        - task list
-  - weechat:
-      panes:
-        - weechat
-  - ncmpcpp:
-      panes:
-        - ncmpcpp -s playlist -S visualizer
+        - vim
+        - npm run serve
+        -
   - shell:
       panes:
         -

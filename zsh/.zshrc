@@ -1,15 +1,8 @@
 source ~/antigen.zsh
 
-# work stuff
-if [ "$OSTYPE"="darwin"* ]; then
-  antigen bundle osx
-  antigen bundle brew
-fi
-
 antigen bundle ssh-agent
 antigen bundle git
 antigen bundle node
-antigen bundle npm
 antigen bundle rupa/z
 antigen bundle lukechilds/zsh-nvm
 antigen bundle zsh-users/zsh-autosuggestions
@@ -26,6 +19,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # SOURCE THINGS
+
+# tmuxinator completions
+source ~/.tmuxinator/tmuxinator.zsh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
