@@ -14,11 +14,11 @@ Plug 'sjl/gundo.vim' " visual undo tree
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'qpkorr/vim-bufkill' " close buffers with BD without closing window
 Plug 'romainl/vim-cool' " hide search highlight when not searching
+Plug 'KeyboardFire/vim-minisnip' " snippets
+Plug 'xtal8/traces.vim' " highlight patterns and ranges
 " }}}
 " Colorscheme {{{
 Plug 'itchyny/lightline.vim'
-Plug 'jnurmine/Zenburn'
-Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 " }}}
 " File manipulation {{{
@@ -112,10 +112,15 @@ command! -bang -nargs=* Rg
 \   <bang>0 ? fzf#vim#with_preview('up:60%')
 \           : fzf#vim#with_preview('right:50%:hidden', '?'),
 \   <bang>0)
+
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 " }}}
 
 " MAPPINGS {{{
 inoremap jk <esc>
+nnoremap <leader>.e :vsplit $MYVIMRC<CR>
+nnoremap <leader>.s :source $MYVIMRC<CR>
 nnoremap <Leader>u :GundoToggle<CR>
 " window
 nnoremap <Leader>ws :split<CR>
@@ -168,6 +173,9 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✖'
 
+" minisnip
+let g:minisnip_dir = '~/.config/nvim/minisnip'
+
 " gundo
 let g:gundo_prefer_python3 = 1
 
@@ -199,7 +207,7 @@ let g:indentLine_leadingSpaceChar = '·'
 
 " lightline
 let g:lightline = {
-\ 'colorscheme': 'onedark',
+\ 'colorscheme': 'Dracula',
 \ 'active': {
 \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
