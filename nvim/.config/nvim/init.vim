@@ -1,65 +1,14 @@
 let mapleader = "\<space>" " map leader key to space
 
-" PLUGINS {{{
-call plug#begin('~/.local/share/nvim/plugged')
-" Utils {{{
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-repeat'
-Plug 'mhinz/vim-startify' " start screen
-Plug 'junegunn/goyo.vim' " focus mode
-Plug 'junegunn/limelight.vim' " focus mode
-Plug 'kopischke/vim-fetch' " go to line when opening file
-Plug 'sjl/gundo.vim' " visual undo tree
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'qpkorr/vim-bufkill' " close buffers with BD without closing window
-Plug 'romainl/vim-cool' " hide search highlight when not searching
-Plug 'KeyboardFire/vim-minisnip' " snippets
-Plug 'xtal8/traces.vim' " highlight patterns and ranges
-" }}}
-" Colorscheme {{{
-Plug 'itchyny/lightline.vim'
-Plug 'drewtempelmeyer/palenight.vim'
-" }}}
-" File manipulation {{{
-Plug 'tpope/vim-eunuch'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish'
-" }}}
-" Text manipulation {{{
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-" }}}
-" Linting and completion {{{
-Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-" Plug 'steelsojka/deoplete-flow'
-" }}}
-" Git {{{
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-" }}}
-" Languages {{{
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'stephpy/vim-yaml'
-Plug 'elzr/vim-json'
-" }}}
-call plug#end()
-" }}}
+source ~/.config/nvim/packages.vim
+
 " DEFAULTS {{{
 augroup defaults
   autocmd!
   autocmd User ALELint call statusline#MaybeUpdateLightline() " update lightline on linter change
   autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown " markdown
 augroup END
+
 " }}}
 " GENERAL {{{
 " UI {{{
@@ -96,23 +45,14 @@ set expandtab
 " Search {{{
 " highlight search matches
 set hlsearch
+" interactive substitution
+set inccommand=nosplit
 " case insensitive search if query is lowercase
 set ignorecase smartcase
-" use ripgrep for grep, if availiable
-if executable('rg')
-  set grepprg=rg\ --vimgrep\ --no-heading
-endif
 " }}}
 " }}}
 
 " COMMANDS {{{
-command! -bang -nargs=* Rg
-\ call fzf#vim#grep(
-\   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
-\   <bang>0 ? fzf#vim#with_preview('up:60%')
-\           : fzf#vim#with_preview('right:50%:hidden', '?'),
-\   <bang>0)
-
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 " }}}
@@ -128,12 +68,12 @@ nnoremap <Leader>wv :vsplit<CR>
 " buffer
 nnoremap <Leader>bn :enew<CR>
 nnoremap <Leader>bd :BD<CR>
-" fzf
+" search
 nnoremap <Leader>sb :Buffers<CR>
 nnoremap <Leader>sl :Lines<CR>
 nnoremap <Leader>sf :Files<CR>
-" grep
-nnoremap <Leader>g :Rg 
+nnoremap <Leader>sg :Grepper -tool rg<CR>
+nnoremap <Leader>* :Grepper -cword -noprompt -tool rg<CR>
 " ale
 nnoremap <Leader>e[ <Plug>(ale_previous_wrap)
 nnoremap <Leader>e] <Plug>(ale_next_wrap)
@@ -175,6 +115,10 @@ let g:ale_sign_error = '✖'
 
 " minisnip
 let g:minisnip_dir = '~/.config/nvim/minisnip'
+
+" grepper
+let g:grepper= {}
+let g:grepper.tools = ['rg']
 
 " gundo
 let g:gundo_prefer_python3 = 1
