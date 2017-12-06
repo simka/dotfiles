@@ -13,11 +13,7 @@ augroup END
 " GENERAL {{{
 " UI {{{
 " colorscheme
-syntax on
-let g:palenight_terminal_italics=1
-let g:palenight_termcolors=16
-set background=dark
-colorscheme palenight
+colorscheme blame
 " hide mode indicator
 set noshowmode
 " highlight current line
@@ -80,6 +76,7 @@ nnoremap <Leader>e] <Plug>(ale_next_wrap)
 " files (vim-eunuch)
 nnoremap <Leader>fd :Delete<CR>
 nnoremap <Leader>fm :Move 
+nnoremap <Leader>fr :Rename 
 nnoremap <Leader>fw :Wall<CR>
 " git (vim-fugitive)
 nnoremap <Leader>gp :Gpush<CR>
@@ -103,11 +100,9 @@ let g:deoplete#sources#ternjs#docs = 1
 let g:deoplete#sources#ternjs#filetypes = ['jsx', 'react.js']
 
 " ale
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+let g:ale_linters = { 'javascript': ['eslint'] }
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
-let g:ale_javascript_pretier_options = '--single-quote --trailing-comma all'
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '▲'
@@ -130,8 +125,8 @@ augroup Goyo
 augroup END
 
 " fzf
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
+let g:fzf_colors = {
+\ 'fg':      ['fg', 'Normal'],
 \ 'bg':      ['bg', 'Normal'],
 \ 'hl':      ['fg', 'Comment'],
 \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -145,16 +140,12 @@ let g:fzf_colors =
 \ 'spinner': ['fg', 'Label'],
 \ 'header':  ['fg', 'Comment'] }
 
-" indentLine
-let g:indentLine_char = '¦'
-let g:indentLine_leadingSpaceChar = '·'
-
 " lightline
 let g:lightline = {
-\ 'colorscheme': 'Dracula',
+\ 'colorscheme': 'jellybeans',
 \ 'active': {
 \   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
-\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+\   'right': [['lineinfo'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
 \ },
 \ 'component_function': {
 \   'gitbranch': 'fugitive#head'

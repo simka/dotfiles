@@ -1,5 +1,4 @@
 packadd minpac
-packadd! palenight.vim
 
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -21,7 +20,7 @@ call minpac#add('xtal8/traces.vim') " highlight patterns and ranges
 " }}}
 " Colorscheme {{{
 call minpac#add('itchyny/lightline.vim')
-call minpac#add('drewtempelmeyer/palenight.vim', {'type': 'opt'})
+call minpac#add('hauleth/blame.vim')
 " }}}
 " File manipulation {{{
 call minpac#add('tpope/vim-eunuch')
