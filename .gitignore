@@ -1,3 +1,12 @@
+mpd/.mpd/database
+mpd/.mpd/log
+mpd/.mpd/pid
+mpd/.mpd/state
+mpd/.mpd/sticker.sql
+
+newsboat/.newsboat/cache.db
+newsboat/.newsboat/cache.db.lock
+
 nvim/.config/nvim/pack/**/*
 
 weechat/.weechat/sec.conf

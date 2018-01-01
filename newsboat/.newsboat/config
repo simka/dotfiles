@@ -1,0 +1,18 @@
+browser firefox
+keep-articles-days 14
+refresh-on-startup yes
+
+# reload
+auto-reload yes
+reload-time 30
+
+# notifications
+notify-format "newsbeuter: %n unread articles in %f feeds"
+notify-program notify-send
+
+# ignores
+ignore-article "*" "title =~ \"Sponsor\""
+ignore-article "*" "title =~ \"Advertisement\""
+ignore-mode "display"
+
+# format and colors

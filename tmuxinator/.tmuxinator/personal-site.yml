@@ -1,0 +1,14 @@
+# ~/.tmuxinator/oersonal-site.yml
+
+name: personal-site
+root: ~/code/personal-site
+windows:
+  - site:
+      layout: main-vertical
+      panes:
+        - nvim
+        - gatsby develop
+        - git status
+  - shell:
+      panes:
+        -

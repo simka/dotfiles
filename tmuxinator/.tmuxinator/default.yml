@@ -40,7 +40,7 @@ windows:
   - get shit done:
       layout: main-vertical
       panes:
-        - newsbeuter
+        - newsboat
         - neomutt
         - task list
   - weechat:
