@@ -46,8 +46,11 @@ bindkey '^[[B' history-substring-search-down
 
 # VARIABLES
 export EDITOR='nvim'
+export VISUAL='nvim'
 export BROWSER='chromium'
 export PAGER="most"
+export VIMCONFIG=~/.config/nvim
+export VIMDATA=~/.local/share/nvim
 
 # ALIASES
 alias vi='nvim'

@@ -39,18 +39,20 @@ call minpac#add('w0rp/ale')
 call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 call minpac#add('carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' })
 " call minpac#add('steelsojka/deoplete-flow')
+call minpac#add('slashmili/alchemist.vim')
 " }}}
 " Git {{{
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('airblade/vim-gitgutter')
 " }}}
 " Languages {{{
-call minpac#add('othree/html5.vim')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('mxw/vim-jsx')
+call minpac#add('rust-lang/rust.vim')
+call minpac#add('elixir-lang/vim-elixir')
+call minpac#add('othree/html5.vim')
 call minpac#add('hail2u/vim-css3-syntax')
 call minpac#add('cakebaker/scss-syntax.vim')
-call minpac#add('rust-lang/rust.vim')
 call minpac#add('stephpy/vim-yaml')
 call minpac#add('elzr/vim-json')
 call minpac#add('toml-lang/toml')

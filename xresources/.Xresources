@@ -1,0 +1,19 @@
+Xft.dpi:                96
+Xft.antialias:         true
+Xft.hinting:           true
+Xft.hintstyle:         hintfull
+!Xft.rgba:              rgb
+
+URxvt.font:             xft:Iosevka Medium:size=12
+URxvt.scrollBar:        false
+URxvt*termName:         rxvt-256color
+URxvt.depth:            32
+URxvt*lineSpace:        1
+URxvt.internalBorder:   30
+
+! DISABLE PERL
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+! COLORS
+#include </home/simka/dotfiles/colorschemes/blame>

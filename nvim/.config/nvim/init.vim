@@ -100,7 +100,7 @@ let g:deoplete#sources#ternjs#docs = 1
 let g:deoplete#sources#ternjs#filetypes = ['jsx', 'react.js']
 
 " ale
-let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'elixir': ['credo'] }
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 let g:ale_fix_on_save = 1
