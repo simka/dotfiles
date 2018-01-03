@@ -65,9 +65,9 @@ module-foreground = ${colors.fg}
 
 font-0 = "ShureTechMono Nerd Font Mono:pixelsize=11;2"
 
-modules-left = i3
-; modules-center = i3
-modules-right = cpu temperature memory eth wlan datetime
+modules-left = memory temperature cpu
+modules-center = i3
+modules-right = wlan eth datetime
 
 tray-position = right
 tray-padding = 2
