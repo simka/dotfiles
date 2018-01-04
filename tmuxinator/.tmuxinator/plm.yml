@@ -1,0 +1,15 @@
+# ~/.tmuxinator/plm.yml
+
+name: plm
+root: ~/code/plm
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+        - npm start
+        - npm test
+  - git:
+      panes:
+        - gitsh

@@ -38,7 +38,6 @@ call minpac#add('tpope/vim-commentary')
 call minpac#add('w0rp/ale')
 call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 call minpac#add('carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' })
-" call minpac#add('steelsojka/deoplete-flow')
 call minpac#add('slashmili/alchemist.vim')
 " }}}
 " Git {{{
