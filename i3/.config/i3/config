@@ -206,6 +206,9 @@ client.unfocused        #282a36 #282a36 #f8f8f2 #282a36
 client.focused_inactive #282a36 #282a36 #f8f8f2 #282a36
 client.urgent           #ff5555 #ff5555 #f8f8f2 #ff5555
 
+# displays
+exec_always --no-startup-id $HOME/scripts/xrandr.sh
+
 # bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
