@@ -3,9 +3,9 @@ rofi.color-window: #222222, #222222, #484848
 rofi.color-normal: #222222, #aaaaaa, #222222, #484848, #ffffff
 rofi.color-active: #222222, #484848, #222222, #484848, #989898
 rofi.color-urgent: #222222, #840d0d, #222222, #484848, #b51515
-rofi.font: ShureTechMono Nerd Font Mono 11
+rofi.font: Iosevka 10
 
-rofi.modi: window,drun,ssh,run
+rofi.modi: window,drun,run
 rofi.width: 60
 rofi.lines: 10
 rofi.columns: 1

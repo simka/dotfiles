@@ -40,7 +40,8 @@ module-margin-right = 1
 module-background = ${colors.bg}
 module-foreground = ${colors.fg}
 
-font-0 = "ShureTechMono Nerd Font Mono:pixelsize=11;2"
+font-0 = "Iosevka:pixelsize=10;2"
+font-1 = "FontAwesome:pixelsize=10;2"
 
 modules-left = memory temperature cpu
 modules-center = i3
@@ -77,7 +78,8 @@ module-margin-right = 1
 module-background = ${colors.bg}
 module-foreground = ${colors.fg}
 
-font-0 = "ShureTechMono Nerd Font Mono:pixelsize=11;2"
+font-0 = "Iosevka:pixelsize=10;2"
+font-1 = "Font Awesome:pixelsize=10;2"
 
 modules-left = memory temperature cpu
 modules-center = i3
@@ -102,44 +104,44 @@ format-padding = 0
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = 
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = ${colors.fg}
 label-mode-background = ${colors.bg}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-foreground = ${colors.fg}
-label-focused-background = ${colors.bg}
+label-focused-background = ${colors.mag}
 label-focused-underline = ${colors.mag}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
 label-unfocused-background = ${colors.bg}
-label-unfocused-underline = ${colors.bblk}
+label-unfocused-underline = ${colors.bg}
 label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = ${colors.grn}
 label-visible-underline = ${colors.grn}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = ${colors.bg}
-label-urgent-underline = ${colors.ylw}
+label-urgent-background = ${colors.red}
+label-urgent-underline = ${colors.red}
 label-urgent-padding = ${self.label-focused-padding}
 
 [module/title]
@@ -187,7 +189,7 @@ type = internal/network
 interface = enp3s0
 interval = 3.0
 
-label-connected =  %local_ip%
+label-connected =  %local_ip%
 label-disconnected = 
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
@@ -201,7 +203,7 @@ interval = 1
 date = %d/%m/%Y
 time = %H:%M
 
-label = %time% %date%
+label =  %time%  %date%
 
 [module/powermenu]
 type = custom/menu
@@ -249,7 +251,7 @@ screenchange-reload = true
 ;compositing-border = over
 format-foreground = ${colors.fg}
 format-background = ${colors.bg}
-format-underline = ${colors.bblk}
+format-underline = ${colors.bg}
 format-padding = 1
 ;format-margin = 1
 
