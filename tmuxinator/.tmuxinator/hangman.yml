@@ -1,0 +1,24 @@
+# ~/.tmuxinator/hangman.yml
+
+name: hangman
+root: ~/code/hangman
+windows:
+  - dictionary:
+      root: ~/code/hangman/dictionary
+      layout: main-vertical
+      panes:
+        - nvim
+        - iex -S mix
+        -
+  - hangman:
+      root: ~/code/hangman/hangman
+      layout: main-vertical
+      panes:
+        - nvim
+        - iex -S mix
+        -
+  - git:
+      layout: main-vertical
+      panes:
+        - tig log
+        -

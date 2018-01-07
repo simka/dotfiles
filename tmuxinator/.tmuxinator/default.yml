@@ -3,9 +3,6 @@
 name: cyberspace7
 root: ~/
 
-# Optional tmux socket
-# socket_name: foo
-
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
 
@@ -43,12 +40,6 @@ windows:
         - newsboat
         - neomutt
         - task list
-  - weechat:
-      panes:
-        - weechat
-  - ncmpcpp:
-      panes:
-        - ncmpcpp -s playlist -S visualizer
   - shell:
       panes:
         -
