@@ -1,17 +1,29 @@
-source ~/antigen.zsh
+source ~/.zplug/init.zsh
 
-antigen bundle ssh-agent
-antigen bundle git
-antigen bundle node
-antigen bundle rupa/z
-antigen bundle lukechilds/zsh-nvm
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/npm", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/tig", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "rupa/z"
+zplug "lukechilds/zsh-nvm"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
+zplug ""
+zplug "djui/alias-tips"
 
-antigen apply
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# source plugins and add commands to $PATH
+zplug load
 
 # HISTORY
 HISTFILE=~/.histfile
@@ -19,8 +31,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # SOURCE THINGS
-
-# tmuxinator completions
+# tmuxinator
 source ~/.tmuxinator/tmuxinator.zsh
 
 # FZF
@@ -44,6 +55,10 @@ setopt COMPLETE_ALIASES
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# add ruby gems to path
+path+=('/home/simka/.gem/ruby/2.5.0/bin')
+export PATH
+
 # VARIABLES
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -53,14 +68,11 @@ export VIMCONFIG=~/.config/nvim
 export VIMDATA=~/.local/share/nvim
 
 # ALIASES
-alias vi='nvim'
-alias vim='nvim'
-
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 
-alias la='ls -AF'          # all files
-alias ld='ls -d */'        # only directories
-alias ll='exa -lagh --git' # all with details
+alias ld='exa -d */'        # only directories
+alias ll='exa -la'          # all
+alias ll='exa -lagh --git'  # all with details
 
