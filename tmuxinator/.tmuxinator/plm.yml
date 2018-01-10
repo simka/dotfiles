@@ -10,6 +10,7 @@ windows:
         - nvim
         - npm start
         - npm test
+        -
   - git:
       panes:
-        - gitsh
+        - til
