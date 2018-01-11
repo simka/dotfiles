@@ -232,6 +232,4 @@ exec_always feh --bg-fill ~/wallpapers/ibm.jpg
 exec --no-startup-id mpd ~/.mpd/mpd.conf
 exec --no-startup-id dropbox
 exec --no-startup-id urxvt
-exec --no-startup-id firefox
 exec --no-startup-id deluge
-exec --no-startup-id emacs --daemon
