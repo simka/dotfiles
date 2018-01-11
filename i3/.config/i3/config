@@ -223,7 +223,7 @@ exec --no-startup-id nm-applet # network manager
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 
 # compositor
-exec --no-startup-id compton --daemon --inactive-opacity=0.85 --xrender-sync --xrender-sync-fence
+exec --no-startup-id compton --daemon --config ~/.config/compton.conf
 
 # wallpaper
 exec_always feh --bg-fill ~/wallpapers/ibm.jpg

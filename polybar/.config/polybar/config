@@ -81,7 +81,7 @@ module-foreground = ${colors.fg}
 font-0 = "Iosevka:pixelsize=10;2"
 font-1 = "Font Awesome:pixelsize=10;2"
 
-modules-left = memory temperature cpu
+modules-left = memory cpu
 modules-center = i3
 modules-right = wlan eth datetime
 
@@ -134,8 +134,8 @@ label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-background = ${colors.grn}
-label-visible-underline = ${colors.grn}
+label-visible-background = ${colors.cyn}
+label-visible-underline = ${colors.cyn}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
