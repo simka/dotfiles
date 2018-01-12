@@ -6,13 +6,14 @@ source ~/.config/nvim/packages.vim
 augroup defaults
   autocmd!
   autocmd User ALELint call statusline#MaybeUpdateLightline() " update lightline on linter change
-  autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=markdown " markdown
+  autocmd VimResized * wincmd =
 augroup END
 
 " }}}
 " GENERAL {{{
 " UI {{{
 " colorscheme
+syntax sync minlines=256
 colorscheme blame
 " hide mode indicator
 set noshowmode
@@ -32,6 +33,7 @@ set hidden
 set undofile
 " use system clipboard
 set clipboard^=unnamed
+set scrolloff=5
 " }}}
 " Indentation {{{
 set shiftwidth=2
@@ -54,7 +56,13 @@ command! PackClean call minpac#clean()
 " }}}
 
 " MAPPINGS {{{
+nnoremap ; :
+vnoremap ; :
+nnoremap : ;
+vnoremap : ;
+nnoremap Y y$
 inoremap jk <esc>
+
 nnoremap <leader>.e :vsplit $MYVIMRC<CR>
 nnoremap <leader>.s :source $MYVIMRC<CR>
 nnoremap <Leader>u :GundoToggle<CR>

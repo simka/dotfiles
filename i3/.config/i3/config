@@ -221,6 +221,7 @@ exec --no-startup-id dunst -config ~/.config/dunct/dunstrc # notifications
 exec --no-startup-id redshift # redshift
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
+exec --no-startup-id volumeicon --smart-tray # volume control in tray
 
 # compositor
 exec --no-startup-id compton --daemon --config ~/.config/compton.conf
