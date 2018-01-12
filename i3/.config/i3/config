@@ -12,7 +12,7 @@ font pango:Iosevka 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # start program launcher
 bindsym $mod+d exec rofi -show drun
@@ -231,5 +231,5 @@ exec_always feh --bg-fill ~/wallpapers/ibm.jpg
 # autostart
 exec --no-startup-id mpd ~/.mpd/mpd.conf
 exec --no-startup-id dropbox
-exec --no-startup-id urxvt
+exec --no-startup-id alacritty
 exec --no-startup-id deluge
