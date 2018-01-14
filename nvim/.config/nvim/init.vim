@@ -1,16 +1,7 @@
-let mapleader = "\<space>" " map leader key to space
-
-source ~/.config/nvim/packages.vim
-
-" DEFAULTS {{{
-augroup defaults
-  autocmd!
-  autocmd User ALELint call statusline#MaybeUpdateLightline() " update lightline on linter change
-  autocmd VimResized * wincmd =
-augroup END
-
+" PLUGINS {{{
+command! PackUpdate call plugins#init() | call minpac#update()
+command! PackClean call plugins#init() | call minpac#clean()
 " }}}
-" GENERAL {{{
 " UI {{{
 " colorscheme
 syntax sync minlines=256
@@ -25,6 +16,10 @@ set number relativenumber
 set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 " sane splits
 set splitbelow splitright
+augroup splits
+  autocmd!
+  autocmd VimResized * wincmd =
+augroup END
 " save buffers as often as possible
 set autowriteall
 " allow hiding modified buffers
@@ -47,12 +42,17 @@ set hlsearch
 set inccommand=nosplit
 " case insensitive search if query is lowercase
 set ignorecase smartcase
+" use rg for grep
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set grepformat=%f:%l:%c:%m,%f:%l%m,%f\ \ %l%m
 " }}}
-" }}}
-
-" COMMANDS {{{
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
+" Statusline {{{
+let &statusline  = ''
+let &statusline .= ' '
+let &statusline .= '« %f » %M %R %<'
+let &statusline .= '%='
+let &statusline .= '%{statusline#linter_status()} %l:%c'
+let &statusline .= ' '
 " }}}
 
 " MAPPINGS {{{
@@ -63,36 +63,30 @@ vnoremap : ;
 nnoremap Y y$
 inoremap jk <esc>
 
-nnoremap <leader>.e :vsplit $MYVIMRC<CR>
-nnoremap <leader>.s :source $MYVIMRC<CR>
-nnoremap <Leader>u :GundoToggle<CR>
-" window
-nnoremap <Leader>ws :split<CR>
-nnoremap <Leader>wv :vsplit<CR>
-" buffer
-nnoremap <Leader>bn :enew<CR>
-nnoremap <Leader>bd :BD<CR>
+" dotfile manipulation
+nnoremap <Space>.e :vsplit $MYVIMRC<CR>
+nnoremap <Space>.s :source $MYVIMRC<CR>
+" tabs and windows manipulation
+nmap <Space>;  <Plug>(choosewin)
+" buffers
+nnoremap <Space>bn :enew<CR>
+nnoremap <Space>bd :BD<CR>
+" lists
+nnoremap <Space>lq :copen<CR>
+nnoremap <Space>ll :lopen<CR>
 " search
-nnoremap <Leader>sb :Buffers<CR>
-nnoremap <Leader>sl :Lines<CR>
-nnoremap <Leader>sf :Files<CR>
-nnoremap <Leader>sg :Grepper -tool rg<CR>
-nnoremap <Leader>* :Grepper -cword -noprompt -tool rg<CR>
+nnoremap <Space>sb :Buffers<CR>
+nnoremap <Space>sl :Lines<CR>
+nnoremap <Space>sf :Files<CR>
+nnoremap <Space>g :grep 
 " ale
-nnoremap <Leader>e[ <Plug>(ale_previous_wrap)
-nnoremap <Leader>e] <Plug>(ale_next_wrap)
+nnoremap <Space>e[ <Plug>(ale_previous_wrap)
+nnoremap <Space>e] <Plug>(ale_next_wrap)
 " files (vim-eunuch)
-nnoremap <Leader>fd :Delete<CR>
-nnoremap <Leader>fm :Move 
-nnoremap <Leader>fr :Rename 
-nnoremap <Leader>fw :Wall<CR>
-" git (vim-fugitive)
-nnoremap <Leader>gp :Gpush<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gf :Gpull<CR>
+nnoremap <Space>fd :Delete<CR>
+nnoremap <Space>fm :Move 
+nnoremap <Space>fr :Rename 
+nnoremap <Space>fw :Wall<CR>
 " }}}
 
 " PLUGINS' SETTINGS {{{
@@ -119,12 +113,9 @@ let g:ale_sign_error = '✖'
 " minisnip
 let g:minisnip_dir = '~/.config/nvim/minisnip'
 
-" grepper
-let g:grepper= {}
-let g:grepper.tools = ['rg']
-
-" gundo
-let g:gundo_prefer_python3 = 1
+" HighlihtedYank {{{
+let g:highlightedyank_highlight_duration = 500
+" }}}
 
 " goyo
 augroup Goyo
@@ -147,26 +138,4 @@ let g:fzf_colors = {
 \ 'marker':  ['fg', 'Keyword'],
 \ 'spinner': ['fg', 'Label'],
 \ 'header':  ['fg', 'Comment'] }
-
-" lightline
-let g:lightline = {
-\ 'colorscheme': 'jellybeans',
-\ 'active': {
-\   'left': [['mode', 'paste'], ['gitbranch', 'filename', 'modified']],
-\   'right': [['lineinfo'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-\ },
-\ 'component_function': {
-\   'gitbranch': 'fugitive#head'
-\ },
-\ 'component_expand': {
-\   'linter_warnings': 'statusline#LightlineLinterWarnings',
-\   'linter_errors': 'statusline#LightlineLinterErrors',
-\   'linter_ok': 'statusline#LightlineLinterOK'
-\ },
-\ 'component_type': {
-\   'readonly': 'error',
-\   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
-\ },
-\ }
 " }}}

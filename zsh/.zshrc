@@ -5,7 +5,6 @@ zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/tig", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
-zplug "rupa/z"
 zplug "lukechilds/zsh-nvm"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
@@ -31,6 +30,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # SOURCE THINGS
+# z
+. ~/z/z.sh
+
 # tmuxinator
 source ~/.tmuxinator/tmuxinator.zsh
 
