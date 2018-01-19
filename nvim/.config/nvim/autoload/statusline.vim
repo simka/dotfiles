@@ -5,7 +5,7 @@ function! statusline#linter_status() abort
     let l:all_non_errors = l:counts.total - l:all_errors
 
     return l:counts.total == 0 ? 'OK' : printf(
-    \   '▲%d ✖%d',
+    \   'E:%d W:%d',
     \   all_non_errors,
     \   all_errors
     \)
