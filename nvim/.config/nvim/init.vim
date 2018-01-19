@@ -27,7 +27,7 @@ set hidden
 " check for file changes more often
 augroup autoread
   autocmd!
-  autocmd BufEnter,FocusGained * checktime
+  autocmd BufEnter,FocusGained * :checktime
 augroup END
 " persistent undo
 set undofile
