@@ -24,6 +24,11 @@ augroup END
 set autowriteall
 " allow hiding modified buffers
 set hidden
+" check for file changes more often
+augroup autoread
+  autocmd!
+  autocmd BufEnter,FocusGained * checktime
+augroup END
 " persistent undo
 set undofile
 " use system clipboard
@@ -36,8 +41,6 @@ set softtabstop=2
 set expandtab
 " }}}
 " Search {{{
-" highlight search matches
-set hlsearch
 " interactive substitution
 set inccommand=nosplit
 " case insensitive search if query is lowercase
