@@ -5,13 +5,13 @@ zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/tig", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/ssh-agent", from:oh-my-zsh
 zplug "lukechilds/zsh-nvm"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
-zplug ""
 zplug "djui/alias-tips"
 
 if ! zplug check --verbose; then
@@ -43,8 +43,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # PROMPT
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
-PURE_GIT_DOWN_ARROW=▼
-PURE_GIT_UP_ARROW=▲
 PURE_CMD_MAX_EXEC_TIME=10
 
 # COMPLETION
