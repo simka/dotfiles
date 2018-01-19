@@ -67,7 +67,7 @@ inoremap jk <esc>
 nnoremap <Space>.e :vsplit $MYVIMRC<CR>
 nnoremap <Space>.s :source $MYVIMRC<CR>
 " tabs and windows manipulation
-nmap <Space>;  <Plug>(choosewin)
+nmap <Space>wc  <Plug>(choosewin)
 " buffers
 nnoremap <Space>bn :enew<CR>
 nnoremap <Space>bd :BD<CR>

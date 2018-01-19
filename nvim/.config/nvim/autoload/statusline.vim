@@ -6,7 +6,7 @@ function! statusline#linter_status() abort
 
     return l:counts.total == 0 ? 'OK' : printf(
     \   'E:%d W:%d',
-    \   all_non_errors,
-    \   all_errors
+    \   all_errors,
+    \   all_non_errors
     \)
 endfunction
