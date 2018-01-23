@@ -30,6 +30,7 @@ function! plugins#init() abort
   " }}}
   " Git {{{
   call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('tpope/vim-fugitive')
   " }}}
   " Languages {{{
   call minpac#add('pangloss/vim-javascript')
