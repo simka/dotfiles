@@ -25,7 +25,6 @@ function! plugins#init() abort
   " Linting and completion {{{
   call minpac#add('w0rp/ale')
   call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-  call minpac#add('carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' })
   call minpac#add('slashmili/alchemist.vim')
   " }}}
   " Git {{{

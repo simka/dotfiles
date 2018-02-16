@@ -54,7 +54,7 @@ let &statusline  = ''
 let &statusline .= ' '
 let &statusline .= '« %f » %M %R %<'
 let &statusline .= '%='
-let &statusline .= '%{statusline#linter_status()} %l:%c'
+let &statusline .= '%l:%c « %{statusline#linter_status()} « %{fugitive#head()}'
 let &statusline .= ' '
 " }}}
 
@@ -100,9 +100,6 @@ let g:jsx_ext_required = 0
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#ternjs#types = 1
-let g:deoplete#sources#ternjs#docs = 1
-let g:deoplete#sources#ternjs#filetypes = ['jsx', 'react.js']
 
 " ale
 let g:ale_linters = { 'javascript': ['eslint'], 'elixir': ['credo'] }
