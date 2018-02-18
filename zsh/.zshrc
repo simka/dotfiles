@@ -68,6 +68,9 @@ export VIMCONFIG=~/.config/nvim
 export VIMDATA=~/.local/share/nvim
 
 # ALIASES
+alias emx="emacsclient -c"
+alias emt="emacsclient -t"
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
