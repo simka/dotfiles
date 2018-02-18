@@ -59,10 +59,6 @@ let &statusline .= ' '
 " }}}
 
 " MAPPINGS {{{
-nnoremap ; :
-vnoremap ; :
-nnoremap : ;
-vnoremap : ;
 nnoremap Y y$
 inoremap jk <esc>
 
