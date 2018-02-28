@@ -1,0 +1,27 @@
+# subject: if applied, this commit will... <type>
+# types:
+#    feat     (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating grunt tasks etc; no production code change)
+# |<---- 50 characters          ---->|
+
+
+# what and why was done
+# |<---- 72 Characters                                           ---->|
+
+# if applicable, github or jira ticket
+
+# --------------------
+# Rules to remember (https://chris.beams.io/posts/git-commit/):
+#   Separate subject from body with a blank line
+#   Limit the subject line to 50 characters
+#   Capitalize the subject line
+#   Do not end the subject line with a period
+#   Use the imperative mood in the subject line
+#   Wrap the body at 72 characters
+#   Use the body to explain what and why vs. how
+# --------------------
