@@ -3,22 +3,18 @@
 name: hangman
 root: ~/code/hangman
 windows:
-  - dictionary:
-      root: ~/code/hangman/dictionary
-      layout: main-vertical
-      panes:
-        - nvim
-        - iex -S mix
-        -
   - hangman:
-      root: ~/code/hangman/hangman
+      root: ~/code/hangman
       layout: main-vertical
       panes:
         - nvim
         - iex -S mix
-        -
+        - mix test
+  - credo:
+      layout: main-vertical
+      panes:
+        - mix credo
   - git:
       layout: main-vertical
       panes:
         - tig log
-        -

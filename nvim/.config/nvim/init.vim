@@ -2,10 +2,12 @@
 command! PackUpdate call plugins#init() | call minpac#update()
 command! PackClean call plugins#init() | call minpac#clean()
 " }}}
+
 " UI {{{
 " colorscheme
-syntax sync minlines=256
-colorscheme blame
+set termguicolors
+set background=dark
+colorscheme plain
 " hide mode indicator
 set noshowmode
 " highlight current line
@@ -35,11 +37,13 @@ set undofile
 set clipboard^=unnamed
 set scrolloff=5
 " }}}
+
 " Indentation {{{
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 " }}}
+
 " Search {{{
 " interactive substitution
 set inccommand=nosplit
@@ -49,12 +53,13 @@ set ignorecase smartcase
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set grepformat=%f:%l:%c:%m,%f:%l%m,%f\ \ %l%m
 " }}}
+
 " Statusline {{{
 let &statusline  = ''
 let &statusline .= ' '
-let &statusline .= '« %f » %M %R %<'
+let &statusline .= '%f » %{fugitive#head()} » %M %R %< '
 let &statusline .= '%='
-let &statusline .= '%l:%c « %{statusline#linter_status()} « %{fugitive#head()}'
+let &statusline .= '%l:%c « %{statusline#linter_status()} «'
 let &statusline .= ' '
 " }}}
 
@@ -65,8 +70,6 @@ inoremap jk <esc>
 " dotfile manipulation
 nnoremap <Space>.e :vsplit $MYVIMRC<CR>
 nnoremap <Space>.s :source $MYVIMRC<CR>
-" tabs and windows manipulation
-nmap <Space>wc  <Plug>(choosewin)
 " buffers
 nnoremap <Space>bn :enew<CR>
 nnoremap <Space>bd :BD<CR>
@@ -106,18 +109,9 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✖'
 
-" minisnip
-let g:minisnip_dir = '~/.config/nvim/minisnip'
-
 " HighlihtedYank {{{
-let g:highlightedyank_highlight_duration = 500
+let g:highlightedyank_highlight_duration = 400
 " }}}
-
-" goyo
-augroup Goyo
-  autocmd! User GoyoEnter Limelight 0.7
-  autocmd! User GoyoLeave Limelight!
-augroup END
 
 " fzf
 let g:fzf_colors = {

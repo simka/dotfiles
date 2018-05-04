@@ -40,6 +40,9 @@ windows:
         - newsboat
         - neomutt
         - task list
+  - weechat:
+    panes:
+      - weechat
   - shell:
       panes:
         -

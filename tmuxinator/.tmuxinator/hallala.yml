@@ -1,0 +1,15 @@
+# ~/.tmuxinator/hallala.yml
+
+name: hallala
+root: ~/code/hallala
+
+windows:
+  - vim:
+      layout: main-vertical
+      panes:
+        - nvim
+        - npm start
+        -
+  - git:
+      panes:
+        - til
