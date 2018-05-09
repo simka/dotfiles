@@ -1,3 +1,9 @@
+"  autoreload config
+augroup autoreload_config
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
 " PLUGINS {{{
 command! PackUpdate call plugins#init() | call minpac#update()
 command! PackClean call plugins#init() | call minpac#clean()
@@ -55,12 +61,13 @@ set grepformat=%f:%l:%c:%m,%f:%l%m,%f\ \ %l%m
 " }}}
 
 " Statusline {{{
-let &statusline  = ''
-let &statusline .= ' '
-let &statusline .= '%f » %{fugitive#head()} » %M %R %< '
-let &statusline .= '%='
-let &statusline .= '%l:%c « %{statusline#linter_status()} «'
-let &statusline .= ' '
+set laststatus=2
+
+set statusline=%f\ »\ %w\ %h\ %m\ %r
+set statusline+=%=\ %l:%c\ «\ %{fugitive#head()}\ «\ 
+set statusline+=\%#StatusLineOk#%{statusline#ALEStatus()}
+set statusline+=\%#StatusLineError#%{statusline#ALEErrors()}
+set statusline+=\%#StatusLineWarning#%{statusline#ALEWarnings()}
 " }}}
 
 " MAPPINGS {{{
@@ -112,6 +119,15 @@ let g:ale_sign_error = '✖'
 " HighlihtedYank {{{
 let g:highlightedyank_highlight_duration = 400
 " }}}
+
+" startify
+let g:startify_list_order = ['sessions', 'dir']
+let g:startify_session_dir = '~/.local/share/nvim/sessions/'
+let g:startify_session_autoload = 1
+let g:startify_session_persistence = 1
+
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1
 
 " fzf
 let g:fzf_colors = {

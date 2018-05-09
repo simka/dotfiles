@@ -13,13 +13,13 @@ function! plugins#init() abort
   call minpac#add('junegunn/fzf.vim')
   " }}}
   " File manipulation {{{
-  call minpac#add('tpope/vim-eunuch', {'type': 'opt'})
+  call minpac#add('tpope/vim-eunuch')
   call minpac#add('justinmk/vim-dirvish')
   " }}}
   " Text manipulation {{{
-  call minpac#add('jiangmiao/auto-pairs', {'type': 'opt'})
-  call minpac#add('tpope/vim-surround', {'type': 'opt'})
-  call minpac#add('tpope/vim-commentary', {'type': 'opt'})
+  call minpac#add('jiangmiao/auto-pairs')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-commentary')
   " }}}
   " Linting and completion {{{
   call minpac#add('w0rp/ale')
@@ -27,7 +27,7 @@ function! plugins#init() abort
   call minpac#add('slashmili/alchemist.vim')
   " }}}
   " Git {{{
-  call minpac#add('airblade/vim-gitgutter', {'type': 'opt'})
+  call minpac#add('airblade/vim-gitgutter')
   call minpac#add('tpope/vim-fugitive')
   " }}}
   " Languages {{{
@@ -50,5 +50,6 @@ function! plugins#init() abort
   call minpac#add('romainl/vim-cool') " hide search highlight when not searching
   call minpac#add('xtal8/traces.vim') " highlight patterns and ranges
   call minpac#add('machakann/vim-highlightedyank') " highlight yanked text
+  call minpac#add('junegunn/vim-peekaboo') " show registers content when pasting or copying from one
   " }}}
 endfunction
