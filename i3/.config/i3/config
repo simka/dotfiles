@@ -217,7 +217,6 @@ exec --no-startup-id dunst -config ~/.config/dunct/dunstrc # notifications
 exec --no-startup-id redshift # redshift
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
-exec --no-startup-id volumeicon # volume control in tray
 
 # compositor
 exec --no-startup-id compton --daemon --config ~/.config/compton.conf
@@ -226,7 +225,6 @@ exec --no-startup-id compton --daemon --config ~/.config/compton.conf
 exec_always feh --bg-fill ~/wallpapers/ibm.jpg
 
 # autostart
-exec --no-startup-id mpd ~/.mpd/mpd.conf
 exec --no-startup-id dropbox
 exec --no-startup-id kitty
 exec --no-startup-id deluge
