@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+echo 'running reflector'
+reflector --protocol https --latest 80 --number 50 --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -Syu
+echo 'done'
+
 echo 'installing pacaur'
 sudo pacman -S pacaur --noconfirm --needed
 echo 'done'
