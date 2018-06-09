@@ -31,7 +31,8 @@ SAVEHIST=10000
 
 # SOURCE THINGS
 # z
-. ~/z/z.sh
+. ~/.z/z.sh
+_Z_DATA=~/.z/data
 
 # tmuxinator
 source ~/.tmuxinator/tmuxinator.zsh
