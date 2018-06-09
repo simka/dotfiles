@@ -25,7 +25,6 @@ echo '======================================='
 echo 'INSTALLING XORG AND I3'
 echo '======================================='
 yay -S xorg-server xorg-setxkbmap xorg-xmodmap xorg-xrandr xorg-xrdb xorg-xinit xterm xf86-video-intel i3
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo '======================================='
 echo 'DONE'
 echo '======================================='
