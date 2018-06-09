@@ -1,38 +1,39 @@
 #!/bin/bash
 set -e
-
-echo 'running reflector'
-reflector --protocol https --latest 80 --number 50 --sort rate --save /etc/pacman.d/mirrorlist
+echo '======================================='
+echo 'RUNNING REFLECTOR'
+echo '======================================='
+sudo reflector --protocol https --latest 80 --number 50 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syu
-echo 'done'
+echo 'DONE'
 
-echo 'installing pacaur'
-sudo pacman -S pacaur --noconfirm --needed
-echo 'done'
+echo '======================================='
+echo 'INSTALLING YAY'
+echo '======================================='
+git clone https://aur.archlinux.org/yay.git ~/yay
+cd ~/yay
+makepkg -si
+cd ~
+rm -rf ~/yay
+echo 'DONE'
 
-echo 'installing xorg and i3'
-pacaur -S xorg-server xorg-apps xorg-xinit xterm xf86-video-intel i3
+echo '======================================='
+echo 'INSTALLING XORG AND I3'
+echo '======================================='
+yay -S xorg-server xorg-apps xorg-xinit xterm xf86-video-intel i3
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo 'done'
-echo 'edit ~/.xinitrc and add exec i3 at the end'
 
-echo 'installing packages'
-pacaur -S audacity beets calibre chromium compton deadbeef deja-dup deluge dropbox dunst emacs exa feh firefox gimp gnucash heroku-cli htop httpie keepassxc kitty most nemo neovim networkmanager network-manager-applet newsboat polybar ranger redshift ripgrep rofi soulseekqt spotify stow tig tmux tree udiskie virtualbox virtualbox-host-modules-arch visual-studio-code-bin xcape zsh
-echo 'done'
+echo '======================================='
+echo 'INSTALLING PACKAGES'
+echo '======================================='
+yay -S alsa-utils alsa-plugins audacity beets calibre chromium compton deadbeef deja-dup deluge dropbox dunst emacs exa feh firefox gimp gnucash htop httpie jack2-dbus keepassxc kitty lxappearance most nemo neovim networkmanager network-manager-applet newsboat polybar postman-bin qjackctl ranger redshift ripgrep rofi spotify stow tig tmux tree udiskie virtualbox virtualbox-host-modules-arch visual-studio-code-bin xcape zsh
+echo 'DONE'
 
-echo 'setting zsh as default shell'
-chsh -s $(which zsh)
-echo 'done'
-
-echo 'installing zplug'
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-echo 'done'
-
-echo 'installing z'
-git clone https://github.com/rupa/z.git ~/z
-echo 'done'
-
-echo 'symlinking dotfiles'
+echo '======================================='
+echo 'SYMLINKING DOTFILES'
+echo '======================================='
+cd ~/dotfiles
 stow compton
 stow dunst
 stow fonts
@@ -47,4 +48,33 @@ stow tmux
 stow tmuxinator
 stow xresources
 stow zsh
-echo 'done'
+cd ~
+echo 'DONE'
+
+echo '======================================='
+echo 'SETTING ZSH AS DEFAULT SHELL'
+echo '======================================='
+chsh -s $(which zsh)
+echo 'DONE'
+
+echo '======================================='
+echo 'INSTALLING MINPAC FOR NEOVIM'
+echo '======================================='
+git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+echo 'DONE'
+
+echo '======================================='
+echo 'INSTALLING ZPLUG'
+echo '======================================='
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+echo 'DONE'
+
+echo '======================================='
+echo 'INSTALLING Z'
+echo '======================================='
+git clone https://github.com/rupa/z.git ~/z
+echo 'DONE'
+
+echo '======================================='
+echo 'all tasks done, edit ~/.xinitrc and add exec i3 at the end'
+echo '======================================='
