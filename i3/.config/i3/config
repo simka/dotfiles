@@ -215,7 +215,7 @@ exec --no-startup-id xcape -e 'Control_L=Escape'
 # applets
 exec --no-startup-id dunst -config ~/.config/dunct/dunstrc # notifications
 exec --no-startup-id redshift # redshift
-exec --no-startup-id nm-applet # network manager
+exec --no-startup-id network-manager-applet # network manager
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
 
 # compositor

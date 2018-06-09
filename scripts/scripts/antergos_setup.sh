@@ -12,7 +12,7 @@ echo 'done'
 echo 'edit ~/.xinitrc and add exec i3 at the end'
 
 echo 'installing packages'
-pacaur -S audacity beets calibre chromium compton deadbeef deja-dup deluge dropbox dunst emacs exa feh firefox gimp gnucash heroku-cli htop httpie keepassxc kitty most nemo neovim networkmanager nm-applet newsboat polybar ranger redshift ripgrep rofi soulseekqt spotify stow tig tmux tree udiskie virtualbox virtualbox-host-modules-arch visual-studio-code-bin xcape zsh
+pacaur -S audacity beets calibre chromium compton deadbeef deja-dup deluge dropbox dunst emacs exa feh firefox gimp gnucash heroku-cli htop httpie keepassxc kitty most nemo neovim networkmanager network-manager-applet newsboat polybar ranger redshift ripgrep rofi soulseekqt spotify stow tig tmux tree udiskie virtualbox virtualbox-host-modules-arch visual-studio-code-bin xcape zsh
 echo 'done'
 
 echo 'setting zsh as default shell'
