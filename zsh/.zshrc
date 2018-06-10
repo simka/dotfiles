@@ -31,8 +31,7 @@ SAVEHIST=10000
 
 # SOURCE THINGS
 # z
-. ~/.z/z.sh
-_Z_DATA=~/.z/data
+. ~/scripts/z/z.sh
 
 # tmuxinator
 source ~/.tmuxinator/tmuxinator.zsh
@@ -63,7 +62,7 @@ export PATH
 # VARIABLES
 export EDITOR='nvim'
 export VISUAL='nvim'
-export BROWSER='chromium'
+export BROWSER='firefox'
 export PAGER="most"
 
 # ALIASES

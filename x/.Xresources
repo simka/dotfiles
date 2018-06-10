@@ -16,4 +16,4 @@ URxvt.perl-ext:
 URxvt.perl-ext-common:
 
 ! COLORS
-#include </home/simka/dotfiles/colorschemes/blame>
+#include </home/simka/dotfiles/colorschemes/dracula>

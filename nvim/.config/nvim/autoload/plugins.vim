@@ -7,6 +7,7 @@ function! plugins#init() abort
   " Colorscheme {{{
   call minpac#add('hauleth/blame.vim')
   call minpac#add('andreypopp/vim-colors-plain')
+  call minpac#add('dracula/vim')
   " }}}
   " Fuzzy search {{{
   call minpac#add('junegunn/fzf')

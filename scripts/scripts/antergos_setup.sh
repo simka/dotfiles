@@ -32,7 +32,59 @@ echo '======================================='
 echo '======================================='
 echo 'INSTALLING PACKAGES'
 echo '======================================='
-yay -S alsa-utils alsa-plugins audacity beets calibre chromium compton deadbeef deluge dropbox dunst emacs exa exercism-cli feh firefox fzf gimp gnucash heroku-cli htop httpie jack2-dbus keepassxc kitty lxappearance most nemo neovim networkmanager network-manager-applet newsboat polybar postman-bin qjackctl ranger redshift ripgrep rofi spotify stow tig tmux tree ttf-font-awesome-4 ttf-inter-ui ttf-iosevka-term udiskie virtualbox visual-studio-code-bin vlc xcape zsh
+yay -S alsa-utils alsa-plugins arc-gtk-theme audacity beets calibre chromium compton deadbeef deluge dropbox dunst emacs exa exercism-cli feh firefox fzf gimp gnucash heroku-cli htop httpie keepassxc kitty lxappearance most nemo neovim networkmanager network-manager-applet newsboat p7zip paper-icon-theme polybar postman-bin python-pip ranger redshift ripgrep rofi spotify stow tig tmux tmuxinator tree ttf-font-awesome-4 ttf-inter-ui ttf-iosevka-term udiskie virtualbox visual-studio-code-bin vlc xcape xclip zsh
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'ENABLE NETWORK MANAGER SERVICE'
+echo '======================================='
+systemctl enable NetworkManager.service
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'SETTING ZSH AS DEFAULT SHELL'
+echo '======================================='
+chsh -s $(which zsh)
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'INSTALLING MINPAC AND PYTHON PROVIDER FOR NEOVIM'
+echo '======================================='
+git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+pip install neovim --user
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'INSTALLING ZPLUG'
+echo '======================================='
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'INSTALLING Z'
+echo '======================================='
+mkdir ~/scripts
+git clone https://github.com/rupa/z.git ~/scripts/z
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+
+echo '======================================='
+echo 'INSTALLING I3 ALTERNATING WINDOWS SCRIPT'
+echo '======================================='
+pip install i3-py --user
+git clone https://github.com/olemartinorg/i3-alternating-layout ~/scripts/i3-alternating-layout
 echo '======================================='
 echo 'DONE'
 echo '======================================='
@@ -56,38 +108,6 @@ stow tmuxinator
 stow x
 stow zsh
 cd ~
-echo '======================================='
-echo 'DONE'
-echo '======================================='
-
-echo '======================================='
-echo 'SETTING ZSH AS DEFAULT SHELL'
-echo '======================================='
-chsh -s $(which zsh)
-echo '======================================='
-echo 'DONE'
-echo '======================================='
-
-echo '======================================='
-echo 'INSTALLING MINPAC FOR NEOVIM'
-echo '======================================='
-git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
-echo '======================================='
-echo 'DONE'
-echo '======================================='
-
-echo '======================================='
-echo 'INSTALLING ZPLUG'
-echo '======================================='
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-echo '======================================='
-echo 'DONE'
-echo '======================================='
-
-echo '======================================='
-echo 'INSTALLING Z'
-echo '======================================='
-git clone https://github.com/rupa/z.git ~/.z
 echo '======================================='
 echo 'DONE'
 echo '======================================='

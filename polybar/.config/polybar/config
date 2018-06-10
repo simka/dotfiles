@@ -20,86 +20,49 @@ bwht = ${xrdb:color15}
 
 [bar/default]
 monitor = ${env:MONITOR:HDMI-2}
+monitor-fallback = ${env:MONITOR:DP-1}
 width = 100%
-height = 30
+height = 32
+radius = 0.0
 fixed-center = true
-bottom = true
 
-background = #00000000
+background = ${colors.bg}
 foreground = ${colors.fg}
 
-line-size = 2
+line-size = 4
+line-color = ${colors.bblk}
 
-border-size = 0
+border-size = 5
 
 padding-left = 0
-padding-right = 0
+padding-right = 3
 
-module-margin-left = 0
+module-margin-left = 1
 module-margin-right = 1
-module-background = ${colors.bg}
-module-foreground = ${colors.fg}
 
-font-0 = "Iosevka:pixelsize=10;2"
-font-1 = "FontAwesome:pixelsize=10;2"
+font-0 = "Iosevka Term:pixelsize=11;2"
+font-1 = "FontAwesome:pixelsize=11;2"
 
-modules-left = memory temperature cpu
+modules-left = wlan eth memory temperature cpu
 modules-center = i3
-modules-right = wlan eth datetime
+modules-right = xwindow date time
 
-tray-position = right
+tray-position = left
 tray-padding = 2
-tray-detached = false
-tray-background = ${colors.bg}
-tray-scale = 1.0
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-[bar/work]
-monitor = ${env:MONITOR:DP-1}
-width = 100%
-height = 30
-fixed-center = true
-bottom = true
-
-background = #00000000
-foreground = ${colors.fg}
-
-line-size = 2
-
-border-size = 0
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 0
-module-margin-right = 1
-module-background = ${colors.bg}
-module-foreground = ${colors.fg}
-
-font-0 = "Iosevka:pixelsize=10;2"
-font-1 = "Font Awesome:pixelsize=10;2"
-
-modules-left = memory cpu
-modules-center = i3
-modules-right = wlan eth datetime
-
-tray-position = right
-tray-padding = 2
-tray-detached = false
-tray-background = ${colors.bg}
-tray-scale = 1.0
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:40:...%
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-format-padding = 0
+strip-wsnumbers = true
 
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
@@ -115,62 +78,48 @@ ws-icon-8 = 9;
 ws-icon-9 = 10;
 ws-icon-default = 
 
-label-mode-padding = 1
+label-mode-padding = 2
 label-mode-foreground = ${colors.fg}
 label-mode-background = ${colors.bg}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-foreground = ${colors.fg}
-label-focused-background = ${colors.mag}
-label-focused-underline = ${colors.mag}
-label-focused-padding = 2
+label-focused-background = ${colors.bg}
+label-focused-underline = ${colors.red}
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
+label-unfocused-foreground = ${colors.red}
 label-unfocused-background = ${colors.bg}
 label-unfocused-underline = ${colors.bg}
 label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-background = ${colors.cyn}
-label-visible-underline = ${colors.cyn}
+label-visible-background = ${colors.bg}
+label-visible-underline = ${colors.blu}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = ${colors.red}
-label-urgent-underline = ${colors.red}
+label-urgent-background = ${colors.bg}
+label-urgent-underline = ${colors.grn}
 label-urgent-padding = ${self.label-focused-padding}
-
-[module/title]
-type = internal/xwindow
-label = %title%
-
-[module/mpd]
-type = internal/mpd
-host = 127.0.0.1
-port = 6600
-
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <label-song>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = " "
+format-prefix-foreground = ${colors.bblk}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
+format-prefix-foreground = ${colors.bblk}
 label = %percentage_used%%
 
 [module/wlan]
@@ -179,84 +128,69 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected =  %essid%
+format-connected-prefix = 
+label-connected = %essid%
 
 format-disconnected = <label-disconnected>
 label-disconnected = 
+label-disconnected-foreground = ${colors.bblk}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp0s31f6
 interval = 3.0
 
-label-connected =  %local_ip%
-label-disconnected = 
+format-connected-prefix = 
+label-connected = " %local_ip%"
+label-disconnected = disconnected
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-[module/datetime]
+[module/date]
 type = internal/date
 interval = 1
 
 date = %d/%m/%Y
-time = %H:%M
 
-label =  %time%  %date%
+format-prefix = 
+format-prefix-foreground = ${colors.bblk}
 
-[module/powermenu]
-type = custom/menu
+label = " %date%"
 
-label-open = 
-label-close = 
-label-separator = |
-label-separator-margin = 1
+[module/time]
+type = internal/date
+interval = 1
 
-format = <label-toggle> <menu>
-format-padding = 1
-menu-0-0 =  logout
-menu-0-0-exec = i3-msg exit
-menu-0-1 = ⏾ sleep
-menu-0-1-exec = systemctl suspend
-menu-0-2 =  hibernate
-menu-0-2-exec = systemctl hibernate
-menu-0-3 =  reboot
-menu-0-3-exec = sysytemctl reboot
-menu-0-4 =  shutdown
-menu-0-4-exec = sysytemctl poweroff
-menu-0-5 =  cancel
+time = " %H:%M"
+
+format-prefix = 
+format-prefix-foreground = ${colors.bblk}
+
+label = %time%
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 3
 warn-temperature = 60
 
-format = <ramp> <label>
-format-warn = <ramp>  <label-warn>
+format = <label>
+format-warn =   <label-warn>
+format-prefix = 
+format-prefix-foreground = ${colors.bblk}
 
-label = %temperature%
-label-warn = %temperature%!
+label = " %temperature%"
+label-warn = " %temperature%!"
 label-warn-foreground = ${colors.red}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-format-foreground = ${colors.fg}
-format-background = ${colors.bg}
-format-underline = ${colors.bg}
-format-padding = 1
-;format-margin = 1
+compositing-background = xor
+compositing-foreground = source
 
 [global/wm]
-;margin-top = 5
-;margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
