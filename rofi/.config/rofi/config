@@ -1,36 +1,7 @@
-rofi.color-enabled: true
-rofi.color-window: #222222, #222222, #484848
-rofi.color-normal: #222222, #aaaaaa, #222222, #484848, #ffffff
-rofi.color-active: #222222, #484848, #222222, #484848, #989898
-rofi.color-urgent: #222222, #840d0d, #222222, #484848, #b51515
-rofi.font: Iosevka Term 10
-
-rofi.modi: window,run
-rofi.width: 60
-rofi.lines: 10
-rofi.columns: 1
-rofi.bw: 1
-rofi.location: 0
-rofi.padding: 5
-rofi.yoffset: 50
-rofi.xoffset: 0
-rofi.fixed-num-lines: false
-rofi.terminal: kitty
-rofi.ssh-client: ssh
-rofi.cycle: true
-rofi.eh: 1
-rofi.line-margin: 3
-rofi.line-padding: 0
-rofi.separator-style: solid
-rofi.hide-scrollbar: true
-rofi.scroll-method: 1
-rofi.window-format:{w}   {c}   {t}
-rofi.click-to-exit: true
-rofi.kb-mode-next: Alt+Right
-rofi.kb-mode-previous: Alt+Left
-rofi.kb-row-select: Control+space
-rofi.kb-cancel: Escape,Control+c
-rofi.display-ssh:SSH
-rofi.display-run:run
-rofi.display-drun:apps
-rofi.display-window:windows
+rofi.font:                           Iosevka Term 10
+rofi.modi:                           drun,window,run
+rofi.show-icons:                     true
+rofi.show:                           run
+rofi.sidebar-mode:                   true
+rofi.terminal:                       kitty
+rofi.theme:                          purple
