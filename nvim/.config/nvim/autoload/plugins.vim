@@ -24,8 +24,10 @@ function! plugins#init() abort
   " }}}
   " Linting and completion {{{
   call minpac#add('w0rp/ale')
-  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-  call minpac#add('slashmili/alchemist.vim')
+  call minpac#add('prabirshrestha/asyncomplete.vim')
+  call minpac#add('prabirshrestha/async.vim')
+  call minpac#add('prabirshrestha/vim-lsp')
+  call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
   " }}}
   " Git {{{
   call minpac#add('airblade/vim-gitgutter')

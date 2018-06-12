@@ -32,8 +32,6 @@ foreground = ${colors.fg}
 line-size = 4
 line-color = ${colors.bblk}
 
-border-size = 5
-
 padding-left = 0
 padding-right = 3
 

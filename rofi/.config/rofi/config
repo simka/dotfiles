@@ -1,7 +1,7 @@
 rofi.font:                           Iosevka Term 10
 rofi.modi:                           drun,window,run
 rofi.show-icons:                     true
-rofi.show:                           run
+rofi.show:                           drun
 rofi.sidebar-mode:                   true
 rofi.terminal:                       kitty
-rofi.theme:                          purple
+rofi.theme:                          dracula

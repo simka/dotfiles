@@ -13,7 +13,7 @@ command! PackClean call plugins#init() | call minpac#clean()
 " colorscheme
 set termguicolors
 set background=dark
-colorscheme plain
+colorscheme dracula
 " hide mode indicator
 set noshowmode
 " highlight current line
@@ -96,22 +96,38 @@ nnoremap <Space>fd :Delete<CR>
 nnoremap <Space>fm :Move 
 nnoremap <Space>fr :Rename 
 nnoremap <Space>fw :Wall<CR>
+" completion
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " }}}
 
 " PLUGINS' SETTINGS {{{
 " vim-javascript
 let g:javascript_plugin_flow = 1
+
 " vim-jsx
 let g:jsx_ext_required = 0
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
+" completion
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'typescript-language-server',
+      \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+      \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+      \ 'whitelist': ['typescript', 'javascript', 'javascript.jsx']
+      \ })
+endif
 
 " ale
 let g:ale_linters = { 'javascript': ['eslint'], 'elixir': ['credo'] }
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✖'

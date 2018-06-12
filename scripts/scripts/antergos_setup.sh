@@ -32,15 +32,23 @@ echo '======================================='
 echo '======================================='
 echo 'INSTALLING PACKAGES'
 echo '======================================='
-yay -S alsa-utils alsa-plugins arc-gtk-theme audacity beets calibre chromium compton deadbeef deluge dropbox dunst emacs exa exercism-cli feh firefox fzf gimp gnucash heroku-cli htop httpie keepassxc kitty lxappearance most nemo neovim networkmanager network-manager-applet newsboat p7zip paper-icon-theme polybar postman-bin python-pip ranger redshift ripgrep rofi spotify stow tig tmux tmuxinator tree ttf-font-awesome-4 ttf-inter-ui ttf-iosevka-term udiskie virtualbox visual-studio-code-bin vlc xcape xclip zsh
+yay -S alsa-utils alsa-plugins arc-gtk-theme audacity beets calibre chromium compton deadbeef deluge dropbox dunst emacs exa exercism-cli feh firefox fzf gimp gnome-disk-utility gnucash heroku-cli htop httpie keepassxc kitty lxappearance most nemo neovim networkmanager network-manager-applet newsboat p7zip paper-icon-theme polybar postman-bin python-pip ranger redshift ripgrep rofi spotify stow tig tmux tmuxinator tree ttf-font-awesome-4 ttf-inter-ui ttf-iosevka-term udiskie virtualbox visual-studio-code-bin vlc xcape xclip zathura zathura-pdf-mupdf zsh
 echo '======================================='
 echo 'DONE'
 echo '======================================='
 
 echo '======================================='
-echo 'ENABLE NETWORK MANAGER SERVICE'
+echo 'ENABLING NETWORK MANAGER SERVICE'
 echo '======================================='
 systemctl enable NetworkManager.service
+echo '======================================='
+echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'ADDING USER TO AUDIO GROUP'
+echo '======================================='
+sudo usermod -aG audio simka
 echo '======================================='
 echo 'DONE'
 echo '======================================='
@@ -49,15 +57,6 @@ echo '======================================='
 echo 'SETTING ZSH AS DEFAULT SHELL'
 echo '======================================='
 chsh -s $(which zsh)
-echo '======================================='
-echo 'DONE'
-echo '======================================='
-
-echo '======================================='
-echo 'INSTALLING MINPAC AND PYTHON PROVIDER FOR NEOVIM'
-echo '======================================='
-git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
-pip install neovim --user
 echo '======================================='
 echo 'DONE'
 echo '======================================='
@@ -81,12 +80,20 @@ echo '======================================='
 
 
 echo '======================================='
-echo 'INSTALLING I3 ALTERNATING WINDOWS SCRIPT'
+echo 'INSTALLING I3 ALTERNATING LAYOUT SCRIPT'
 echo '======================================='
 pip install i3-py --user
 git clone https://github.com/olemartinorg/i3-alternating-layout ~/scripts/i3-alternating-layout
 echo '======================================='
 echo 'DONE'
+echo '======================================='
+
+echo '======================================='
+echo 'INSTALLING TMUX PLUGIN MANAGER'
+echo '======================================='
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo '======================================='
+echo 'DONE, DON'T FORGET TO INSTALL PLUGINS!
 echo '======================================='
 
 echo '======================================='
