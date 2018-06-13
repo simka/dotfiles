@@ -2,11 +2,8 @@
     email = mcj.simka@gmail.com
     name = maciej simka
 
-[init]
-    templatefir = ~/dotfiles/git_template
-
 [commit]
-    template = ~/.git-commit-template
+    template = ~/.config/git/.git-commit-template
 
 [rerere]
     enabled = true
