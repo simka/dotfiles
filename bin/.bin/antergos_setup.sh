@@ -46,14 +46,6 @@ echo 'DONE'
 echo '======================================='
 
 echo '======================================='
-echo 'ENABLING REDSHIFT SERVICE'
-echo '======================================='
-systemctl --user enable redshift.service
-echo '======================================='
-echo 'DONE'
-echo '======================================='
-
-echo '======================================='
 echo 'ADDING USER TO AUDIO GROUP'
 echo '======================================='
 sudo usermod -aG audio simka

@@ -5,9 +5,8 @@ function! plugins#init() abort
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   " Colorscheme {{{
-  call minpac#add('hauleth/blame.vim')
   call minpac#add('andreypopp/vim-colors-plain')
-  call minpac#add('dracula/vim')
+  call minpac#add('fenetikm/falcon')
   " }}}
   " Fuzzy search {{{
   call minpac#add('junegunn/fzf')
@@ -21,13 +20,12 @@ function! plugins#init() abort
   call minpac#add('jiangmiao/auto-pairs')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-commentary')
+  call minpac#add('wellle/targets.vim')
   " }}}
   " Linting and completion {{{
   call minpac#add('w0rp/ale')
-  call minpac#add('prabirshrestha/asyncomplete.vim')
-  call minpac#add('prabirshrestha/async.vim')
-  call minpac#add('prabirshrestha/vim-lsp')
-  call minpac#add('prabirshrestha/asyncomplete-lsp.vim')
+  call minpac#add('neoclide/coc.nvim', {'do': {-> coc#util#install()}})
+  " call minpac#add('Shougo/echodoc.vim')
   " }}}
   " Git {{{
   call minpac#add('airblade/vim-gitgutter')
@@ -35,6 +33,7 @@ function! plugins#init() abort
   " }}}
   " Languages {{{
   call minpac#add('pangloss/vim-javascript')
+  call minpac#add('leafgarland/typescript-vim')
   call minpac#add('mxw/vim-jsx')
   call minpac#add('elixir-lang/vim-elixir')
   call minpac#add('othree/html5.vim')

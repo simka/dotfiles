@@ -1,7 +1,14 @@
-rofi.font:                           Iosevka Term 10
-rofi.modi:                           drun,window,run
-rofi.show-icons:                     true
-rofi.show:                           drun
-rofi.sidebar-mode:                   true
-rofi.terminal:                       kitty
-rofi.theme:                          dracula
+rofi.bw: 0
+rofi.combi-modi: window,run
+rofi.font: Iosevka Term 20
+rofi.fullscreen: true
+rofi.hide-scrollbar: true
+rofi.line-padding: 10
+rofi.lines: 5
+rofi.modi: combi,run,window
+rofi.padding: 400
+rofi.separator-style: dash
+rofi.show-icons: false
+rofi.sidebar-mode: false
+rofi.terminal: kitty
+

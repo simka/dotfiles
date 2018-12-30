@@ -1,232 +1,212 @@
-# i3 config file (v4)
-#
-# User guide http://i3wm.org/docs/userguide.html
+# GAPS
+for_window [class="^.*"] border pixel 2
+gaps inner 10
+gaps outer 10
+smart_borders on
 
+# VARIABLES
+set $term --no-startup-id $TERMINAL
 set $mod Mod4
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set_from_resource $darkblack	color0  #000000
+set_from_resource $black	color8  #000000
+set_from_resource $darkred	color1  #000000
+set_from_resource $red		color9  #000000
+set_from_resource $darkgreen	color2  #000000
+set_from_resource $green	color10 #000000
+set_from_resource $darkyellow	color3  #000000
+set_from_resource $yellow	color11 #000000
+set_from_resource $darkblue	color4  #000000
+set_from_resource $blue		color12 #000000
+set_from_resource $darkmagenta	color5  #000000
+set_from_resource $magenta	color13 #000000
+set_from_resource $darkcyan	color6  #000000
+set_from_resource $cyan		color14 #000000
+set_from_resource $darkwhite	color7  #000000
+set_from_resource $white	color15 #000000
+set $transparent #00000000
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Iosevka Term 10
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec kitty
-
-# start program launcher
-bindsym $mod+d exec rofi -show run -show-icons -sidebar-mode
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left  focus left
-bindsym $mod+Down  focus down
-bindsym $mod+Up    focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left  move left
-bindsym $mod+Shift+Down  move down
-bindsym $mod+Shift+Up    move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+b split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+z focus child
-
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
-
-# switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
-
-bindsym $mod+comma workspace prev
-bindsym $mod+period workspace next
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# Power control mode
 set $power_control "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff"
 mode  $power_control {
     bindsym l exec ~/.i3/lock.sh; mode "default"
     bindsym o exec i3-msg exit; mode "default"
     bindsym s exec systemctl suspend; mode "default"
     bindsym h exec systemctl hibernate; mode "default"
-    bindsym r exec systemctl reboot; mode "default"
-    bindsym p exec systemctl poweroff; mode "default"
+    bindsym r exec [class=".*"] kill; exec sleep 2; exec systemctl reboot; mode "default"
+    bindsym p exec [class=".*"] kill; exec sleep 2; exec systemctl poweroff; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+shift+x mode $power_control
 
-# Screenshot (with shift only focused window)
-bindsym --release Print       exec --no-startup-id scrot
-bindsym --release Shift+Print exec --no-startup-id scrot -u
-
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Media player controls
-bindsym XF86AudioPlay exec deadbeef --play
-bindsym XF86AudioPause exec deadbeef --pause
-bindsym XF86AudioNext exec deadbeef --next
-bindsym XF86AudioPrev exec deadbeef --prev
-
-# Applications 
-bindsym $mod+F1 exec code
-bindsym $mod+F2 exec emacsclient
-bindsym $mod+F3 exec nemo
-bindsym $mod+F4 exec chromium
-bindsym $mod+F5 exec keepass
-
-# Borders
- for_window [class="^.*"] border pixel 0
-
-# Workspace assignment
-assign [class="Code"] $workspace2
-assign [class="Spotify"] $workspace9
-assign [class="Deluge"] $workspace10
-assign [class="Soulseek"] $workspace10
-
-# Gaps
-gaps inner 5
-smart_borders no_gaps
-
-bindsym $mod+y       gaps inner current minus 5
-bindsym $mod+u       gaps inner current plus 5
-bindsym $mod+Shift+y gaps outer current minus 5
-bindsym $mod+Shift+u gaps outer current plus 5
-
-# class                 border  backgr. text    indicator
-client.focused          #6272a4 #6272a4 #f8f8f2 #6272a4
-client.unfocused        #282a36 #282a36 #f8f8f2 #282a36
-client.focused_inactive #282a36 #282a36 #f8f8f2 #282a36
-client.urgent           #ff5555 #ff5555 #f8f8f2 #ff5555
-
-# displays
-exec_always --no-startup-id $HOME/scripts/xrandr.sh
-
+# START
+# wallpaper
+exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
+# notifications
+exec --no-startup-id dunst
+# compositor
+exec --no-startup-id compton --daemon --config ~/.config/compton.conf
+# make mouse cursor invisible after period of incactivity
+exec --no-startup-id unclutter
 # bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+# redshift
+exec --no-startup-id redshift
+# alternating windows script
+exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
+exec --no-startup-id nm-applet # network manager
+exec --no-startup-id udiskie --smart-tray # usb storage automounter
+exec --no-startup-id dropbox
+exec --no-startup-id deluge
+exec --no-startup-id cadence-session-start -s
 
-# capslock mapping
+# remaps
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
 
-# alternating windows script
-exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
+# COLORS AND FONT
+font pango:Iosevka Term 10
 
-# applets
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc # notifications
-exec --no-startup-id nm-applet # network manager
-exec --no-startup-id udiskie --smart-tray # usb storage automounter
+#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
+client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
+client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
+client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
+client.urgent		$darkred	$darkred	$black		$darkred		$darkred
+client.background $black
 
-# compositor
-exec --no-startup-id compton --daemon --config ~/.config/compton.conf
+# BINDINGS
+bindsym $mod+Return exec $term
 
-# wallpaper
-exec_always feh --bg-fill ~/wallpapers/ghibli.png
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
 
-# autostart
-exec --no-startup-id dropbox
-exec --no-startup-id kitty
-exec --no-startup-id deluge
+bindsym --release Print       exec --no-startup-id scrot
+bindsym --release Shift+Print exec --no-startup-id scrot -u
+
+# bindsym $mod+Escape
+# bindsym $mod+Shift+Escape
+
+# bindsym $mod+BackSpace
+# bindsym $mod+Shift+BackSpace
+
+bindsym $mod+q kill
+bindsym $mod+shift+q mode $power_control
+
+bindsym $mod+w			exec --no-startup-id $BROWSER
+# bindsym $mod+Shift+w
+
+bindsym $mod+e			exec $term -e neomutt
+# bindsym $mod+Shift+e
+
+bindsym $mod+r 			exec $term -e ranger
+bindsym $mod+Shift+r            restart
+
+bindsym $mod+t			split toggle
+bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+
+# bindsym $mod+y
+bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+
+# bindsym $mod+u
+bindsym $mod+Shift+u		exec --no-startup-id i3resize down
+
+bindsym $mod+i 			exec $term -e htop
+bindsym $mod+Shift+i		exec --no-startup-id i3resize up
+
+# bindsym $mod+o
+bindsym $mod+Shift+o		exec --no-startup-id i3resize right
+
+# bindsym $mod+p
+# bindsym $mod+Shift+p
+
+# bindsym $mod+a
+# bindsym $mod+Shift+a
+
+bindsym $mod+s			gaps inner current plus 5
+bindsym $mod+Shift+s		gaps inner current minus 5
+
+bindsym $mod+d                  exec --no-startup-id rofi -show combi
+bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+
+bindsym $mod+f			fullscreen toggle
+# bindsym $mod+Shift+f
+
+# bindsym $mod+g
+# bindsym $mod+Shift+g
+
+bindsym $mod+h			focus left
+bindsym $mod+Shift+h		move left 30
+
+bindsym $mod+j			focus down
+bindsym $mod+Shift+j		move down 30
+
+bindsym $mod+k			focus up
+bindsym $mod+Shift+k		move up 30
+
+bindsym $mod+l			focus right
+bindsym $mod+Shift+l		move right 30
+
+bindsym $mod+z			gaps outer current plus 5
+bindsym $mod+Shift+z		gaps outer current minus 5
+
+# bindsym $mod+x
+# bindsym $mod+Shift+x
+
+#bindsym $mod+c
+# bindsym $mod+Shift+c
+
+#bindsym $mod+v
+#bindsym $mod+Shift+v
+
+# bindsym $mod+b
+bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+
+bindsym $mod+n			exec $term -e newsboat
+bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id bottomright
+
+# bindsym $mod+m
+# bindsym $mod+Shift+m
+
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+
+# WORKSPACES
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Workspace assignment
+assign [class="Firefox"] $ws2
+assign [class="Skype"] $ws8
+assign [class="Spotify"] $ws9
+assign [class="Deluge"] $ws10
+assign [class="Soulseek"] $ws10
