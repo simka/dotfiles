@@ -1,22 +1,10 @@
 [colors]
-bg = ${xrdb:background}
-fg = ${xrdb:foreground}
-blk = ${xrdb:color0}
-bblk = ${xrdb:color8}
-red = ${xrdb:color1}
-bred = ${xrdb:color9}
-grn = ${xrdb:color2}
-bgrn = ${xrdb:color10}
-ylw = ${xrdb:color3}
-bylw = ${xrdb:color11}
-blu = ${xrdb:color4}
-bblu = ${xrdb:color12}
-mag = ${xrdb:color5}
-bmag = ${xrdb:color13}
-cyn = ${xrdb:color6}
-bcyn = ${xrdb:color14}
-wht = ${xrdb:color7}
-bwht = ${xrdb:color15}
+background = ${xrdb:color8:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color15:#222}
+primary = #ff5fff
+secondary = ${xrdb:color6:#222}
+alert = ${xrdb:color1:#222}
 
 [bar/default]
 monitor = ${env:MONITOR:HDMI-1}
@@ -26,25 +14,29 @@ height = 30
 radius = 0.0
 fixed-center = true
 
-background = ${colors.bblk}
-foreground = ${colors.bwht}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 2
-line-color = ${colors.bblk}
+line-color = ${colors.background}
 
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 1
+module-margin-right = 2
 
-font-0 = "Iosevka Term:pixelsize=9;2"
-font-1 = "FontAwesome:pixelsize=9;2"
+font-0 = "Iosevka Term:pixelsize=9;3"
+font-1 = "FontAwesome5Free:pixelsize=10;3"
+font-2 = "FontAwesome5Free:style=Solid:pixelsize=10;3"
+font-3 = "Font Awesome5Brands:style=Solid:pixelsize=10;3"
 
 modules-left = i3
 modules-center = xwindow
 modules-right = cpu temperature memory arch-updates datetime
 
+tray-position = right
+tray-padding = 2
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -62,61 +54,62 @@ strip-wsnumbers = true
 
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = 
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
 
 label-mode-padding = 2
-label-mode-foreground = ${colors.fg}
-label-mode-background = ${colors.bg}
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-foreground = ${colors.fg}
-label-focused-background = ${colors.bg}
-label-focused-underline = ${colors.bg}
+label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
-label-unfocused-foreground = ${colors.blu}
-label-unfocused-background = ${colors.bg}
-label-unfocused-underline = ${colors.bg}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
+label-unfocused-underline = ${colors.background}
 label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
-label-visible-background = ${colors.bg}
-label-visible-underline = ${colors.bg}
+label-visible-foreground = ${colors.secondary}
+label-visible-background = ${colors.background}
+label-visible-underline = ${colors.secondary}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-foreground = ${colors.bred}
-label-urgent-background = ${colors.bg}
-label-urgent-underline = ${colors.bg}
+label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.background}
+label-urgent-underline = ${colors.alert}
 label-urgent-padding = ${self.label-focused-padding}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.blu}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.blu}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
 [module/datetime]
@@ -125,8 +118,8 @@ interval = 1
 
 date = "%a %b %e, %H:%M "
 
-format-prefix = 
-format-prefix-foreground = ${colors.blu}
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
 
 label = " %date%"
 
@@ -137,20 +130,20 @@ warn-temperature = 60
 
 format = <label>
 format-warn =   <label-warn>
-format-prefix = 
-format-prefix-foreground = ${colors.blu}
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
 
 label = " %temperature%"
 label-warn = " %temperature%!"
-label-warn-foreground = ${colors.red}
+label-warn-foreground = ${colors.alert}
 
 [module/arch-updates]
 type = custom/script
-interval = 3600
+interval = 1800
 exec = "checkupdates | wc -l"
 format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.blu}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 click-left = "kitty -e update"
 
 [settings]

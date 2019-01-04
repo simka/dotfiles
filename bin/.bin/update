@@ -24,7 +24,7 @@ printf "===================\n"
 
 CULIST=$(checkupdates)
 if [[ $CULIST = "" ]]; then
-    echo "no new packages"
+    echo "No new packages"
     exit
 fi
 
@@ -38,4 +38,14 @@ if [ "$CONT" = "y" ] || [ "$CONT" = "Y" ]; then
     yay -Syu
 else
     printf "\nUpdate cancelled.\n"
+    exit
+fi
+
+printf "\nLaunch paccache and remove uninstalled packages from cache? (y/N) "
+read -r CONT
+if [ "$CONT" = "y" ] || [ "$CONT" = "Y" ]; then
+    printf "\n"
+    paccache -ruk0
+else
+    printf "\nCache cleanup cancelled.\n"
 fi

@@ -17,23 +17,24 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-set_from_resource $darkblack	color0  #000000
-set_from_resource $black	color8  #000000
-set_from_resource $darkred	color1  #000000
-set_from_resource $red		color9  #000000
-set_from_resource $darkgreen	color2  #000000
-set_from_resource $green	color10 #000000
-set_from_resource $darkyellow	color3  #000000
-set_from_resource $yellow	color11 #000000
-set_from_resource $darkblue	color4  #000000
-set_from_resource $blue		color12 #000000
-set_from_resource $darkmagenta	color5  #000000
-set_from_resource $magenta	color13 #000000
-set_from_resource $darkcyan	color6  #000000
-set_from_resource $cyan		color14 #000000
-set_from_resource $darkwhite	color7  #000000
-set_from_resource $white	color15 #000000
+set_from_resource $darkblack   color0  #000000
+set_from_resource $black       color8  #000000
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
 set $transparent #00000000
+set $accent #ff5fff
 
 set $power_control "[l]ock log[o]ut [s]uspend [h]ibernate [r]eboot [p]oweroff"
 mode  $power_control {
@@ -41,8 +42,8 @@ mode  $power_control {
     bindsym o exec i3-msg exit; mode "default"
     bindsym s exec systemctl suspend; mode "default"
     bindsym h exec systemctl hibernate; mode "default"
-    bindsym r exec [class=".*"] kill; exec sleep 2; exec systemctl reboot; mode "default"
-    bindsym p exec [class=".*"] kill; exec sleep 2; exec systemctl poweroff; mode "default"
+    bindsym r exec [class=".*"] kill && systemctl reboot; mode "default"
+    bindsym p exec [class=".*"] kill && systemctl poweroff; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -50,7 +51,7 @@ mode  $power_control {
 
 # START
 # wallpaper
-exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
+exec_always --no-startup-id feh --bg-scale ~/.config/wall.jpg
 # notifications
 exec --no-startup-id dunst
 # compositor
@@ -58,14 +59,13 @@ exec --no-startup-id compton --daemon --config ~/.config/compton.conf
 # make mouse cursor invisible after period of incactivity
 exec --no-startup-id unclutter
 # bar
-exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # redshift
 exec --no-startup-id redshift
 # alternating windows script
 exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
-exec --no-startup-id dropbox
 exec --no-startup-id deluge
 exec --no-startup-id cadence-session-start -s
 
@@ -73,14 +73,14 @@ exec --no-startup-id cadence-session-start -s
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape'
 
-# COLORS AND FONT
+# FONT
 font pango:Iosevka Term 10
 
-#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
-client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
-client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
-client.urgent		$darkred	$darkred	$black		$darkred		$darkred
+# COLORS                border       background text     indicator   child_border
+client.focused          $red         $red       $magenta $darkmagenta $darkblue
+client.unfocused        $transparent $blue      $white   $darkblue    $darkblack
+client.focused_inactive $transparent $blue      $white   $darkblue    $darkblack
+client.urgent           $darkred     $darkred   $black   $darkred     $darkred
 client.background $black
 
 # BINDINGS
@@ -98,65 +98,65 @@ bindsym --release Shift+Print exec --no-startup-id scrot -u
 # bindsym $mod+BackSpace
 # bindsym $mod+Shift+BackSpace
 
-bindsym $mod+q kill
+bindsym $mod+q       kill
 bindsym $mod+shift+q mode $power_control
 
-bindsym $mod+w			exec --no-startup-id $BROWSER
+bindsym $mod+w       exec --no-startup-id $BROWSER
 # bindsym $mod+Shift+w
 
-bindsym $mod+e			exec $term -e neomutt
+bindsym $mod+e       exec $term -e neomutt
 # bindsym $mod+Shift+e
 
-bindsym $mod+r 			exec $term -e ranger
-bindsym $mod+Shift+r            restart
+bindsym $mod+r       exec $term -e ranger
+bindsym $mod+Shift+r restart
 
-bindsym $mod+t			split toggle
-bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+t       split toggle
+bindsym $mod+Shift+t gaps inner current set 15; gaps outer current set 15
 
 # bindsym $mod+y
-bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+bindsym $mod+Shift+y exec --no-startup-id i3resize left
 
 # bindsym $mod+u
-bindsym $mod+Shift+u		exec --no-startup-id i3resize down
+bindsym $mod+Shift+u exec --no-startup-id i3resize down
 
-bindsym $mod+i 			exec $term -e htop
-bindsym $mod+Shift+i		exec --no-startup-id i3resize up
+bindsym $mod+i       exec $term -e htop
+bindsym $mod+Shift+i exec --no-startup-id i3resize up
 
 # bindsym $mod+o
-bindsym $mod+Shift+o		exec --no-startup-id i3resize right
+bindsym $mod+Shift+o exec --no-startup-id i3resize right
 
-# bindsym $mod+p
+bindsym $mod+p       exec keepassxc
 # bindsym $mod+Shift+p
 
 # bindsym $mod+a
 # bindsym $mod+Shift+a
 
-bindsym $mod+s			gaps inner current plus 5
-bindsym $mod+Shift+s		gaps inner current minus 5
+bindsym $mod+s       gaps inner current plus 5
+bindsym $mod+Shift+s gaps inner current minus 5
 
-bindsym $mod+d                  exec --no-startup-id rofi -show combi
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+bindsym $mod+d       exec --no-startup-id rofi -show combi
+bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
-bindsym $mod+f			fullscreen toggle
+bindsym $mod+f       fullscreen toggle
 # bindsym $mod+Shift+f
 
-# bindsym $mod+g
+bindsym $mod+g       exec gnucash
 # bindsym $mod+Shift+g
 
-bindsym $mod+h			focus left
-bindsym $mod+Shift+h		move left 30
+bindsym $mod+h       focus left
+bindsym $mod+Shift+h move left 30
 
-bindsym $mod+j			focus down
-bindsym $mod+Shift+j		move down 30
+bindsym $mod+j       focus down
+bindsym $mod+Shift+j move down 30
 
-bindsym $mod+k			focus up
-bindsym $mod+Shift+k		move up 30
+bindsym $mod+k       focus up
+bindsym $mod+Shift+k move up 30
 
-bindsym $mod+l			focus right
-bindsym $mod+Shift+l		move right 30
+bindsym $mod+l       focus right
+bindsym $mod+Shift+l move right 30
 
-bindsym $mod+z			gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $mod+z       gaps outer current plus 5
+bindsym $mod+Shift+z gaps outer current minus 5
 
 # bindsym $mod+x
 # bindsym $mod+Shift+x
@@ -168,16 +168,16 @@ bindsym $mod+Shift+z		gaps outer current minus 5
 #bindsym $mod+Shift+v
 
 # bindsym $mod+b
-bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+bindsym $mod+Shift+b floating toggle; sticky toggle; exec --no-startup-id bottomleft
 
-bindsym $mod+n			exec $term -e newsboat
-bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id bottomright
+bindsym $mod+n       exec $term -e newsboat
+bindsym $mod+Shift+n floating toggle; sticky toggle; exec --no-startup-id bottomright
 
-# bindsym $mod+m
+bindsym $mod+m       exec spotify
 # bindsym $mod+Shift+m
 
-bindsym $mod+comma workspace prev
-bindsym $mod+period workspace next
+bindsym $mod+comma    workspace prev
+bindsym $mod+period   workspace next
 
 # WORKSPACES
 # switch to workspace
