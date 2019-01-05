@@ -42,8 +42,8 @@ mode  $power_control {
     bindsym o exec i3-msg exit; mode "default"
     bindsym s exec systemctl suspend; mode "default"
     bindsym h exec systemctl hibernate; mode "default"
-    bindsym r exec [class=".*"] kill && systemctl reboot; mode "default"
-    bindsym p exec [class=".*"] kill && systemctl poweroff; mode "default"
+    bindsym r exec [class=".*"] kill; exec sleep 3; exec systemctl reboot; mode "default"
+    bindsym p exec [class=".*"] kill; exec sleep 3; exec systemctl poweroff; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -62,11 +62,13 @@ exec --no-startup-id unclutter
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # redshift
 exec --no-startup-id redshift
-# alternating windows script
-exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
-exec --no-startup-id nm-applet # network manager
-exec --no-startup-id udiskie --smart-tray # usb storage automounter
+# network manager
+exec --no-startup-id nm-applet
+# usb storage automounter
+exec --no-startup-id udiskie --smart-tray
+# torrent client
 exec --no-startup-id deluge
+# JACK and utils
 exec --no-startup-id cadence-session-start -s
 
 # remaps
