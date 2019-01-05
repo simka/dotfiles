@@ -125,8 +125,9 @@ label = " %date%"
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 3
-warn-temperature = 60
+interval = 1
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+warn-temperature = 80
 
 format = <label>
 format-warn =   <label-warn>
