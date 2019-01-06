@@ -41,11 +41,6 @@ autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=λ
 PURE_CMD_MAX_EXEC_TIME=10
 
-# tiny care terminal
-export TTC_REPOS='/home/simka/code' 
-export TTC_WEATHER='Wroclaw'
-export TTC_APIKEYS=false
-
 # BINDINGS
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -53,9 +48,6 @@ bindkey '^[[B' history-substring-search-down
 # SOURCE
 # tmuxinator
 . ~/.tmuxinator/tmuxinator.zsh
-
-# z
-. ~/scripts/z/z.sh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
