@@ -1,5 +1,4 @@
 browser firefox
-keep-articles-days 14
 refresh-on-startup yes
 
 # reload
@@ -7,7 +6,7 @@ auto-reload yes
 reload-time 30
 
 # notifications
-notify-format "newsbeuter: %n unread articles in %f feeds"
+notify-format "newsboat: %n unread articles"
 notify-program notify-send
 
 # ignores
@@ -15,4 +14,22 @@ ignore-article "*" "title =~ \"Sponsor\""
 ignore-article "*" "title =~ \"Advertisement\""
 ignore-mode "display"
 
-# format and colors
+# bindings
+
+unbind-key g # bound to `sort` by default
+bind-key g home
+
+unbind-key G # bound to `rev-sort` by default
+bind-key G end
+
+unbind-key h
+bind-key h quit
+
+unbind-key j # bound to 'next-feed' by default
+bind-key j down
+
+unbind-key k # bound to 'prev-feed' by default
+bind-key k up
+
+unbind-key l # bound to 'toggle-show-read-feeds' by default
+bind-key l open

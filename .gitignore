@@ -1,10 +1,7 @@
+newsboat/.newsboat/history.cmdline
+newsboat/.newsboat/history.search
 newsboat/.newsboat/cache.db
 newsboat/.newsboat/cache.db.lock
+newsboat/.newsboat/urls
 
 nvim/.config/nvim/pack/**/*
-
-weechat/.weechat/sec.conf
-weechat/.weechat/logs
-weechat/.weechat/*.log
-weechat/.weechat/xfer/
-weechat/.weechat/irc.conf
