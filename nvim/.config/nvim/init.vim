@@ -1,3 +1,7 @@
+"  disable netrw
+let g:loaded_netrw = 1
+let g:netrw_loaded_netrwPlugin = 1
+
 "  autoreload config
 augroup autoreload_config
     autocmd!
