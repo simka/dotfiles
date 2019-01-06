@@ -1,0 +1,12 @@
+zoom_in k XF86Forward
+zoom_out j XF86Back
+next_img l space
+prev_img h BackSpace
+
+scroll_up K Up
+scroll_down J Down
+scroll_right L Right
+scroll_left H Left
+
+toggle_fullscreen f
+save_filelist F
