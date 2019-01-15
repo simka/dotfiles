@@ -1,3 +1,6 @@
+[core]
+  excludesfile = ~/config/git/.global_gitignore
+
 [user]
     email = mcj.simka@gmail.com
     name = maciej simka
