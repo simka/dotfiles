@@ -1,20 +1,28 @@
-function! statusline#ALEWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('  W:%d ', all_non_errors)
+" displays a flag if there are unseen quickfix errors
+function! statusline#quickfix()
+  return get(g:, 'quickfix_pending') ? '[Q]' : ''
 endfunction
 
-function! statusline#ALEErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf(' E:%d ', all_errors)
-endfunction
+" displays a flag if there are unseen loclist errors
+function! statusline#loclist()
+  let l:win = winnr()
 
-function! statusline#ALEStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? ' ok ' : ''
+  if empty(getloclist(l:win))
+    return ''
+  endif
+
+  if qf#IsLocWindowOpen(l:win)
+    if !exists('g:loclist_seen')
+      let g:loclist_seen = {}
+    endif
+    let g:loclist_seen[l:win] = 1
+
+    return ''
+  endif
+
+  if exists('g:loclist_seen') && !get(g:loclist_seen, l:win)
+    return '[L]'
+  endif
+
+  return ''
 endfunction
