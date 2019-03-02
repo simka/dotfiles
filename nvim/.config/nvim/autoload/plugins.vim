@@ -22,6 +22,7 @@ function! plugins#init() abort
   " }}}
   " LSP and completion {{{
   call minpac#add('neoclide/coc.nvim', {'do': {-> coc#util#install()}}) " LSP
+  call minpac#add('Shougo/echodoc.vim') " print docs in echo
   " }}}
   " Languages {{{
   call minpac#add('cakebaker/scss-syntax.vim') " scss

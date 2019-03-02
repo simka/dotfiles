@@ -13,7 +13,7 @@ set hidden " allow hiding modified buffers
 set undofile " persistent undo
 set clipboard^=unnamed " use system clipboard
 set scrolloff=15
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set signcolumn=yes
 " }}}
@@ -77,11 +77,6 @@ augroup END
 " }}}
 
 " MAPPINGS {{{
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 " general
 nnoremap Y y$
 inoremap jk <esc>
@@ -170,16 +165,14 @@ let g:jsx_ext_required = 0
 " vimtex
 let g:vimtex_view_method = 'zathura'
 
-" HighlihtedYank {{{
+" HighlihtedYank
 let g:highlightedyank_highlight_duration = 400
-" }}}
 
 " startify
 let g:startify_list_order = ['sessions', 'dir']
 let g:startify_session_dir = '~/.local/share/nvim/sessions/'
 let g:startify_session_autoload = 1
 let g:startify_session_persistence = 1
-
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 " }}}

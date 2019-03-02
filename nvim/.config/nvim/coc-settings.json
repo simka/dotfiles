@@ -1,4 +1,5 @@
 {
+  "coc.preferences.echodocSupport": true,
   "eslint.autoFix": true,
   "languageserver": {
     "elixir": {
