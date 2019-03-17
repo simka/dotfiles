@@ -1,13 +1,9 @@
-# subject: if applied, this commit will...
-# |<---- 50 characters                     ---->|
+# <type>[optional scope]: <description>
 
+# [optional body] what and why was done
 
-# what and why was done
-# |<---- 72 Characters                                           ---->|
-
-
-# if applicable, github or jira ticket
-
+# [optional footer] ticket id
+#
 # --------------------
 #   Separate subject from body with a blank line
 #   Limit the subject line to 50 characters
