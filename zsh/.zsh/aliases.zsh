@@ -1,5 +1,5 @@
 # antigen
-alias antigen-static-bundle='antibody bundle < $ZDOTDIR/.zsh/.zsh_plugins.txt > $ZDOTDIR/.zsh/.zsh_plugins.sh' # regenerate static bundle
+alias antibody-static-bundle='antibody bundle < $ZDOTDIR/.zsh_plugins.txt > $ZDOTDIR/.zsh_plugins.sh' # generate static plugins bundle
 
 # exa
 alias ld='exa -d */'        # only directories
@@ -9,7 +9,8 @@ alias lll='exa -lagh --git'  # all with details
 # git
 alias g='git'
 alias gst='git status'
-alias gc='git checkout'
+alias gc='git commit'
+alias gch='git checkout'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 

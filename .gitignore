@@ -8,3 +8,4 @@ nvim/.config/nvim/pack/**/*
 
 .zcompdump
 .zsh_history
+.zsh_plugins.sh
