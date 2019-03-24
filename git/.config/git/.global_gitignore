@@ -2,6 +2,10 @@
 ###################
 .makery.json
 
+# Version managers #
+###################
+.tool-versions
+
 # Compiled source #
 ###################
 *.com
