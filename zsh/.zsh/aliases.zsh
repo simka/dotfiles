@@ -7,7 +7,11 @@ alias ll='exa -la'          # all
 alias lll='exa -lagh --git'  # all with details
 
 # git
-alias gst="git status"
+alias g='git'
+alias gst='git status'
+alias gc='git checkout'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
 
 # tig
 alias tis='tig status'
