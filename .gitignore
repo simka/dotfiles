@@ -5,3 +5,6 @@ newsboat/.newsboat/cache.db.lock
 newsboat/.newsboat/urls
 
 nvim/.config/nvim/pack/**/*
+
+.zcompdump
+.zsh_history
