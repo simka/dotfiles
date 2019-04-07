@@ -1,8 +1,6 @@
 " UI {{{
 set termguicolors
-let g:falcon_background = 0
-let g:falcon_inactive = 1
-colorscheme falcon
+colorscheme dracula
 set noshowmode " hide mode indicator
 set cursorline " highlight current line
 set number relativenumber " set relative line numbers

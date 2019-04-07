@@ -5,7 +5,7 @@ function! plugins#init() abort
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   " Colorscheme {{{
-  call minpac#add('fenetikm/falcon')
+  call minpac#add('dracula/vim')
   " }}}
   " Fuzzy search {{{
   call minpac#add('junegunn/fzf.vim')
@@ -39,7 +39,6 @@ function! plugins#init() abort
   call minpac#add('tidalcycles/vim-tidal') " tidalcycles
   " }}}
   " Utils {{{
-  call minpac#add('airblade/vim-gitgutter') " show git changes in gutter
   call minpac#add('christoomey/vim-tmux-navigator') " common mapping for changing vim and tmux splits
   call minpac#add('hauleth/asyncdo.vim') " run commands asynchronously
   call minpac#add('igemnace/vim-makery') " easy makeprg definitions for projects

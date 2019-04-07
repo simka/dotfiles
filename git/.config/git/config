@@ -2,15 +2,24 @@
   excludesfile = ~/config/git/.global_gitignore
 
 [user]
-    email = mcj.simka@gmail.com
-    name = maciej simka
+  email = mcj.simka@gmail.com
+  name = maciej simka
 
 [commit]
-    template = ~/.config/git/.git-commit-template
-    verbose = true
+  template = ~/.config/git/.git-commit-template
+  verbose = true
+
+[merge]
+  tool = vimdiff
+
+[mergetool]
+  keepBackup = false
+
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [rerere]
-    enabled = true
+  enabled = true
 
 [alias]
   r = !GIT_NO_PAGER=1 git l -30
