@@ -7,4 +7,4 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! COLORS
-#include </home/simka/dotfiles/colorschemes/falcon>
+#include </home/simka/dotfiles/colorschemes/dracula>
