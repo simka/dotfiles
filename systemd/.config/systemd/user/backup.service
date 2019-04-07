@@ -1,9 +1,0 @@
-[Unit]
-Description=Cloud backups daemon
-
-[Service]
-ExecStart=/home/simka/.bin/backup
-Restart=always
-
-[Install]
-WantedBy=default.target
