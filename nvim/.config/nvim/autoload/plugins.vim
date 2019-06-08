@@ -5,7 +5,7 @@ function! plugins#init() abort
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   " Colorscheme {{{
-  call minpac#add('dracula/vim')
+  call minpac#add('haishanh/night-owl.vim')
   " }}}
   " Fuzzy search {{{
   call minpac#add('junegunn/fzf.vim')
@@ -36,7 +36,6 @@ function! plugins#init() abort
   call minpac#add('pangloss/vim-javascript') " javascript
   call minpac#add('stephpy/vim-yaml') " yaml
   call minpac#add('styled-components/vim-styled-components') " styled-components
-  call minpac#add('tidalcycles/vim-tidal') " tidalcycles
   " }}}
   " Utils {{{
   call minpac#add('christoomey/vim-tmux-navigator') " common mapping for changing vim and tmux splits

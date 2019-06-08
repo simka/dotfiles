@@ -1,6 +1,19 @@
+if !exists('g:env')
+  if has('win64') || has('win32') || has('win16')
+    let g:env = 'WINDOWS'
+  else
+    let g:env = toupper(substitute(system('uname'), '\n', '', ''))
+  endif
+endif
+
+" macOS specific stuff
+if g:env =~ 'DARWIN'
+  set rtp+=/usr/local/opt/fzf
+endif
+
 " UI {{{
 set termguicolors
-colorscheme dracula
+colorscheme night-owl
 set noshowmode " hide mode indicator
 set cursorline " highlight current line
 set number relativenumber " set relative line numbers
@@ -11,7 +24,8 @@ set hidden " allow hiding modified buffers
 set undofile " persistent undo
 set clipboard^=unnamed " use system clipboard
 set scrolloff=15
-set cmdheight=1
+set cmdheight=2
+set shortmess+=c
 set updatetime=300
 set signcolumn=yes
 " }}}
@@ -72,6 +86,10 @@ augroup autoread " check for file changes more often
   autocmd!
   autocmd BufEnter,FocusGained * :checktime
 augroup END
+
+augroup coc
+  autocmd!
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 " }}}
 
 " MAPPINGS {{{
@@ -150,6 +168,9 @@ endfunction
 " }}}
 
 " PLUGINS' SETTINGS {{{
+" coc.nvim
+let g:coc_global_extensions = ['coc-css', 'coc-eslint', 'coc-html', 'coc-json', 'coc-sh', 'coc-stylelint', 'coc-tslint', 'coc-tsserver', 'coc-yaml']
+
 " netrw (disable)
 let g:loaded_netrw = 1
 let g:netrw_loaded_netrwPlugin = 1

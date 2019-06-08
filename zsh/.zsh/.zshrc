@@ -60,8 +60,12 @@ source $ZDOTDIR/aliases.zsh
 source ~/.tmuxinator/tmuxinator.zsh
 
 # fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/fzf/completion.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
 
 # asdf
 source $HOME/.asdf/asdf.sh
