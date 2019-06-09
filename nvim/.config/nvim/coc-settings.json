@@ -1,10 +1,20 @@
 {
-  "coc.preferences.echodocSupport": true,
   "eslint.autoFix": true,
   "languageserver": {
     "elixir": {
       "command": "/home/simka/.language-servers/elixir-ls/language_server.sh",
       "filetypes": ["elixir", "eelixir"]
+    },
+    "flow": {
+      "command": "./node_modules/.bin/flow",
+      "args": ["lsp"],
+      "filetypes": ["javascript", "javascriptreact"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
     }
-  }
+  },
+  "suggest.echodocSupport": true,
+  "tsserver.enableJavascript": true
 }

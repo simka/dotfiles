@@ -30,7 +30,6 @@ function! plugins#init() abort
   call minpac#add('elzr/vim-json') " json
   call minpac#add('hail2u/vim-css3-syntax') " css
   call minpac#add('leafgarland/typescript-vim') " typescript
-  call minpac#add('lervag/vimtex') " latex
   call minpac#add('mxw/vim-jsx') " jsx
   call minpac#add('othree/html5.vim') " html
   call minpac#add('pangloss/vim-javascript') " javascript
