@@ -20,7 +20,7 @@ nnoremap <Space>lq :copen<CR>
 nnoremap <Space>ll :lopen<CR>
 
 " search
-nnoremap <Space>g :grep 
+nnoremap <Space>g :Grep 
 nnoremap <Space>sf :Files<CR>
 nnoremap <Space>sb :Buffers<CR>
 nnoremap <Space>sh :Helptags<CR>
@@ -36,7 +36,7 @@ nnoremap <Space>fw :Wall<CR>
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ functions#check_back_space() ? "\<TAB>" :
+      \ Check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
@@ -58,7 +58,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call functions#show_documentation()<CR>
+nnoremap <silent> K :call Show_documentation()<CR>
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)

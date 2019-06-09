@@ -1,9 +1,9 @@
-function! functions#check_back_space() abort
+function! Check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-function! functions#show_documentation()
+function! Show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
   else
@@ -11,3 +11,7 @@ function! functions#show_documentation()
   endif
 endfunction
 
+function! Grep(args)
+  let args = split(a:args, ' ')
+  return system(join([&grepprg, shellescape(args[0]), get(args, 1, '')], ' '))
+endfunction
