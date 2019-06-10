@@ -51,5 +51,8 @@ function! plugins#init() abort
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('xtal8/traces.vim') " highlight patterns and ranges
   call minpac#add('airblade/vim-rooter') " automatically set root based on .git directory
+  call minpac#add('junegunn/goyo.vim') " focus mode
+  call minpac#add('junegunn/limelight.vim') " even focusier focus mode
+
   " }}}
 endfunction

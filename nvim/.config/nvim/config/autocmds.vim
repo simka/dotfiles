@@ -13,4 +13,8 @@ augroup autocmds
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
+  " Goyo
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+
 augroup END
