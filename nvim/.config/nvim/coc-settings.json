@@ -6,6 +6,7 @@
       "filetypes": ["elixir", "eelixir"]
     },
     "flow": {
+      "enable": false,
       "command": "./node_modules/.bin/flow",
       "args": ["lsp"],
       "filetypes": ["javascript", "javascriptreact"],
