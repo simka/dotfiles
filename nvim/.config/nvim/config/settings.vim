@@ -17,7 +17,7 @@ set updatetime=300
 set signcolumn=yes
 " }}}
 
-" for coc.nvim
+" avoid issues with language servers
 set nobackup
 set nowritebackup
 
@@ -28,6 +28,11 @@ set expandtab
 set foldmethod=syntax
 set foldlevel=999
 " }}}
+
+" soft text wrapping
+set wrap
+set linebreak
+set nolist
 
 " Search {{{
 " interactive substitution

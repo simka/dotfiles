@@ -14,7 +14,7 @@ augroup autocmds
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
   " Goyo
-  autocmd! User GoyoEnter Limelight
-  autocmd! User GoyoLeave Limelight!
+  autocmd! User GoyoEnter Limelight | call Goyo_enter()
+  autocmd! User GoyoLeave Limelight! | call Goyo_leave()
 
 augroup END
