@@ -42,7 +42,7 @@ function! plugins#init() abort
   call minpac#add('igemnace/vim-makery') " easy makeprg definitions for projects
   call minpac#add('junegunn/vim-peekaboo') " show registers content when pasting or copying from one
   call minpac#add('machakann/vim-highlightedyank') " highlight yanked text
-  call minpac#add('mhinz/vim-startify') " start screen
+  call minpac#add('mhinz/vim-startify') " start screen and sessions management
   call minpac#add('qpkorr/vim-bufkill') " close buffers with BD without closing window
   call minpac#add('romainl/vim-cool') " hide search highlight when not searching
   call minpac#add('romainl/vim-qf') " quicklist enhancements
