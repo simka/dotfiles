@@ -11,9 +11,6 @@ let g:javascript_plugin_flow = 1
 " vim-jsx
 let g:jsx_ext_required = 0
 
-" vimtex
-let g:vimtex_view_method = 'zathura'
-
 " HighlihtedYank
 let g:highlightedyank_highlight_duration = 400
 
