@@ -29,6 +29,7 @@ function! plugins#init() abort
   call minpac#add('elixir-lang/vim-elixir') " elixir
   call minpac#add('elzr/vim-json') " json
   call minpac#add('hail2u/vim-css3-syntax') " css
+  call minpac#add('ianks/vim-tsx') " tsx
   call minpac#add('leafgarland/typescript-vim') " typescript
   call minpac#add('mxw/vim-jsx') " jsx
   call minpac#add('othree/html5.vim') " html
