@@ -13,7 +13,7 @@ fi
 export PATH=$PATH:$HOME/.bin
 
 # yarn global packages
-export PATH="$PATH:`yarn global bin`"
+export PATH="$(yarn global bin):$PATH"
 
 # android development
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
