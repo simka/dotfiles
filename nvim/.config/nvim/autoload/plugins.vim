@@ -26,6 +26,7 @@ function! plugins#init() abort
   " }}}
   " Languages {{{
   call minpac#add('cakebaker/scss-syntax.vim') " scss
+  call minpac#add('cespare/vim-toml') " toml
   call minpac#add('elixir-lang/vim-elixir') " elixir
   call minpac#add('elzr/vim-json') " json
   call minpac#add('hail2u/vim-css3-syntax') " css
@@ -34,6 +35,7 @@ function! plugins#init() abort
   call minpac#add('mxw/vim-jsx') " jsx
   call minpac#add('othree/html5.vim') " html
   call minpac#add('pangloss/vim-javascript') " javascript
+  call minpac#add('rust-lang/rust.vim') " rust
   call minpac#add('stephpy/vim-yaml') " yaml
   call minpac#add('styled-components/vim-styled-components') " styled-components
   " }}}

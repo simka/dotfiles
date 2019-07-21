@@ -1,10 +1,6 @@
 {
   "eslint.autoFix": true,
   "languageserver": {
-    "elixir": {
-      "command": "/home/simka/.language-servers/elixir-ls/language_server.sh",
-      "filetypes": ["elixir", "eelixir"]
-    },
     "flow": {
       "enable": false,
       "command": "./node_modules/.bin/flow",

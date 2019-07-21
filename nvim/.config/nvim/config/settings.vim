@@ -9,7 +9,7 @@ set splitbelow splitright " more intuitive vertical and horizontal splits
 set autowriteall " save buffers as often as possible
 set hidden " allow hiding modified buffers
 set undofile " persistent undo
-set clipboard^=unnamed " use system clipboard
+set clipboard^=unnamedplus " use system clipboard
 set scrolloff=15
 set cmdheight=2
 set shortmess+=c

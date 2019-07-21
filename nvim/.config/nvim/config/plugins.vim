@@ -1,5 +1,5 @@
 " coc.nvim
-let g:coc_global_extensions = ['coc-css', 'coc-eslint', 'coc-html', 'coc-json', 'coc-sh', 'coc-stylelint', 'coc-tslint', 'coc-tsserver', 'coc-yaml']
+let g:coc_global_extensions = ['coc-css', 'coc-elixir', 'coc-eslint', 'coc-html', 'coc-json', 'coc-rls', 'coc-sh', 'coc-stylelint', 'coc-tslint', 'coc-tsserver', 'coc-yaml']
 
 " netrw (disable)
 let g:loaded_netrw = 1
@@ -10,6 +10,9 @@ let g:javascript_plugin_flow = 1
 
 " vim-jsx
 let g:jsx_ext_required = 0
+
+" rust
+let g:rustfmt_autosave = 1
 
 " HighlihtedYank
 let g:highlightedyank_highlight_duration = 400
