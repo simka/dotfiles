@@ -1,6 +1,7 @@
 " UI {{{
 set termguicolors
 colorscheme night-owl
+" colorscheme atlas
 set noshowmode " hide mode indicator
 set cursorline " highlight current line
 set number relativenumber " set relative line numbers
