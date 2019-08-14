@@ -4,6 +4,11 @@ export VISUAL='nvim'
 export BROWSER='firefox'
 export TERMINAL="kitty"
 
+# nix
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  . $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
