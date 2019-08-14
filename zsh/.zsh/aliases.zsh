@@ -27,6 +27,10 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
+# sudo
+alias please='sudo'
+alias prettyplease='sudo !!'
+
 # ..
 alias ...='cd ../..'
 alias ....='cd ../../..'
