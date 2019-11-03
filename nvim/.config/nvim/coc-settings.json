@@ -1,5 +1,11 @@
 {
-  "eslint.autoFix": true,
+  "eslint.autoFix": false,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "languageserver": {
     "flow": {
       "enable": false,
