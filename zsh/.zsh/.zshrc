@@ -64,8 +64,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  source ~/.nix-profile/share/fzf/completion.zsh
-  source ~/.nix-profile/share/fzf/key-bindings.zsh
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
 
 # asdf

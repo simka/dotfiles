@@ -8,7 +8,7 @@ endif
 
 " macOS specific stuff
 if g:env =~ 'DARWIN'
-  set rtp+=/Users/simka/.nix-profile/share/vim-plugins/fzf-0.18.0
+  set rtp+=/usr/local/opt/fzf
 endif
 
 source $HOME/.config/nvim/config/settings.vim
