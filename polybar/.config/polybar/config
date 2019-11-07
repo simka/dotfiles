@@ -10,7 +10,7 @@ alert = ${xrdb:color1:#222}
 monitor = ${env:MONITOR:HDMI1}
 monitor-fallback = ${env:MONITOR:HDMI2}
 width = 100%
-height = 30
+height = 25
 radius = 0.0
 fixed-center = true
 
@@ -26,10 +26,10 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Iosevka Term:pixelsize=9;3"
-font-1 = "FontAwesome5Free:pixelsize=10;3"
-font-2 = "FontAwesome5Free:style=Solid:pixelsize=10;3"
-font-3 = "Font Awesome5Brands:style=Solid:pixelsize=10;3"
+font-0 = "Terminus:pixelsize=9;1"
+font-1 = "FontAwesome5Free:pixelsize=9;2"
+font-2 = "FontAwesome5Free:style=Solid:pixelsize=9;2"
+font-3 = "Font Awesome5Brands:style=Solid:pixelsize=9;2"
 
 modules-left = i3
 modules-center = xwindow
