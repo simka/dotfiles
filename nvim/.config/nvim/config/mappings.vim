@@ -6,6 +6,8 @@ inoremap jk <esc>
 nnoremap g= gg=Gg``
 noremap  Q  gq
 nnoremap gQ mmgggqG`m
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " dotfile manipulation
 nnoremap <Space>.e :vsplit $MYVIMRC<CR>

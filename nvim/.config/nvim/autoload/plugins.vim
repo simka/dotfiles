@@ -15,10 +15,11 @@ function! plugins#init() abort
   call minpac#add('justinmk/vim-dirvish')
   " }}}
   " Text manipulation {{{
-  call minpac#add('jiangmiao/auto-pairs')
+  call minpac#add('tmsvg/pear-tree')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-commentary')
   call minpac#add('wellle/targets.vim')
+  call minpac#add('AndrewRadev/tagalong.vim')
   " }}}
   " LSP and completion {{{
   call minpac#add('neoclide/coc.nvim', { 'branch': 'release' }) " LSP
@@ -53,6 +54,7 @@ function! plugins#init() abort
   call minpac#add('xtal8/traces.vim') " highlight patterns and ranges
   call minpac#add('airblade/vim-rooter') " automatically set root based on .git directory
   call minpac#add('junegunn/goyo.vim') " focus mode
+  call minpac#add('andymass/vim-matchup') " matchit replacement
   call minpac#add('junegunn/limelight.vim') " even focusier focus mode
   " }}}
 endfunction
