@@ -1,5 +1,5 @@
 " coc.nvim
-let g:coc_global_extensions = ['coc-css', 'coc-elixir', 'coc-eslint', 'coc-html', 'coc-json', 'coc-prettier', 'coc-sh', 'coc-stylelint', 'coc-tabnine', 'coc-tsserver', 'coc-yaml']
+let g:coc_global_extensions = ['coc-css', 'coc-elixir', 'coc-eslint', 'coc-html', 'coc-json', 'coc-prettier', 'coc-sh', 'coc-snippets', 'coc-stylelint', 'coc-tabnine', 'coc-tsserver', 'coc-yaml']
 
 " netrw (disable)
 let g:loaded_netrw = 1

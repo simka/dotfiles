@@ -1,13 +1,14 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "graphql",
     "javascript",
     "javascriptreact",
-    "typescript",
-    "typescriptreact",
     "json",
-    "css",
+    "markdown",
     "scss",
-    "markdown"
+    "typescript",
+    "typescriptreact"
   ],
   "eslint.autoFix": false,
   "eslint.filetypes": [

@@ -1,28 +1,52 @@
-" displays a flag if there are unseen quickfix errors
-function! statusline#quickfix()
-  return get(g:, 'quickfix_pending') ? '[Q]' : ''
+function! statusline#RedrawModeColors(mode)
+  " Normal mode
+  if a:mode == 'n'
+    hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
+    hi MyStatuslineFilename ctermfg=4 cterm=none ctermbg=0
+    hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=4
+  " Insert mode
+  elseif a:mode == 'i'
+    hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
+    hi MyStatuslineFilename ctermfg=1 cterm=none ctermbg=0
+    hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=1
+  " Replace mode
+  elseif a:mode == 'R'
+    hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
+    hi MyStatuslineFilename ctermfg=3 cterm=none ctermbg=0
+    hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=3
+  " Visual mode
+  elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
+    hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
+    hi MyStatuslineFilename ctermfg=5 cterm=none ctermbg=0
+    hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=5
+  " Command mode
+  elseif a:mode == 'c'
+    hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
+    hi MyStatuslineFilename ctermfg=6 cterm=none ctermbg=0
+    hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=6
+  " Terminal mode
+  elseif a:mode == 't'
+    hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
+    hi MyStatuslineFilename ctermfg=1 cterm=none ctermbg=0
+    hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=1
+  endif
+  " Return empty string so as not to display anything in the statusline
+  return ''
 endfunction
 
-" displays a flag if there are unseen loclist errors
-function! statusline#loclist()
-  let l:win = winnr()
-
-  if empty(getloclist(l:win))
-    return ''
-  endif
-
-  if qf#IsLocWindowOpen(l:win)
-    if !exists('g:loclist_seen')
-      let g:loclist_seen = {}
+function! statusline#SetModifiedSymbol(modified)
+    if a:modified == 1
+        hi MyStatuslineModifiedBody ctermbg=0 cterm=bold ctermfg=1
+    else
+        hi MyStatuslineModifiedBody ctermbg=0 cterm=bold ctermfg=8
     endif
-    let g:loclist_seen[l:win] = 1
+    return '●'
+endfunction
 
-    return ''
+function! statusline#SetFiletype(filetype)
+  if a:filetype == ''
+      return '-'
+  else
+      return a:filetype
   endif
-
-  if exists('g:loclist_seen') && !get(g:loclist_seen, l:win)
-    return '[L]'
-  endif
-
-  return ''
 endfunction
