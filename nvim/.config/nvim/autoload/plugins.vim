@@ -15,7 +15,7 @@ function! plugins#init() abort
   call minpac#add('justinmk/vim-dirvish')
   " }}}
   " Text manipulation {{{
-  call minpac#add('tmsvg/pear-tree')
+  call minpac#add('jiangmiao/auto-pairs')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-commentary')
   call minpac#add('wellle/targets.vim')
@@ -29,6 +29,7 @@ function! plugins#init() abort
   call minpac#add('cakebaker/scss-syntax.vim') " scss
   call minpac#add('elixir-lang/vim-elixir') " elixir
   call minpac#add('elzr/vim-json') " json
+  call minpac#add('fatih/vim-go') " go
   call minpac#add('hail2u/vim-css3-syntax') " css
   call minpac#add('ianks/vim-tsx') " tsx
   call minpac#add('leafgarland/typescript-vim') " typescript
@@ -37,6 +38,7 @@ function! plugins#init() abort
   call minpac#add('pangloss/vim-javascript') " javascript
   call minpac#add('stephpy/vim-yaml') " yaml
   call minpac#add('styled-components/vim-styled-components') " styled-components
+  call minpac#add('tbastos/vim-lua') " lua
   " }}}
   " Utils {{{
   call minpac#add('christoomey/vim-tmux-navigator') " common mapping for changing vim and tmux splits

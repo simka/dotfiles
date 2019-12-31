@@ -17,6 +17,11 @@
     "typescript",
     "typescriptreact"
   ],
+  "go.goplsOptions": {
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "deepCompletion": true
+  },
   "languageserver": {
     "flow": {
       "enable": false,

@@ -1,5 +1,9 @@
 " coc.nvim
-let g:coc_global_extensions = ['coc-css', 'coc-elixir', 'coc-eslint', 'coc-html', 'coc-json', 'coc-prettier', 'coc-sh', 'coc-snippets', 'coc-stylelint', 'coc-tabnine', 'coc-tsserver', 'coc-yaml']
+let g:coc_global_extensions = ['coc-css', 'coc-elixir', 'coc-eslint', 'coc-go', 'coc-html', 'coc-json', 'coc-prettier', 'coc-sh', 'coc-snippets', 'coc-stylelint', 'coc-tsserver', 'coc-yaml']
+
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient
+let g:go_def_mapping_enabled = 0
 
 " netrw (disable)
 let g:loaded_netrw = 1

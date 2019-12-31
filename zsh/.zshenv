@@ -3,7 +3,6 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export BROWSER='firefox'
 export TERMINAL="kitty"
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
@@ -14,6 +13,10 @@ export PATH=$PATH:$HOME/.bin
 
 # yarn global packages
 export PATH="$(yarn global bin):$PATH"
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # android development
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
