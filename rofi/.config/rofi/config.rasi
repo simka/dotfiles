@@ -2,7 +2,7 @@ configuration {
     modi: "combi,windowcd,run";
     lines: 10;
     columns: 2;
-    font: "Cascadia Code 13";
+    font: "IBM Plex Mono Medium 12";
     bw: 0;
     location: 0;
     padding: 0;
