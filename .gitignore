@@ -1,11 +1,1 @@
-newsboat/.newsboat/history.cmdline
-newsboat/.newsboat/history.search
-newsboat/.newsboat/cache.db
-newsboat/.newsboat/cache.db.lock
-newsboat/.newsboat/urls
-
-nvim/.config/nvim/pack/**/*
-
-.zcompdump
-.zsh_history
-.zsh_plugins.sh
+nvim/pack/**/*

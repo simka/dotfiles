@@ -1,0 +1,65 @@
+export DOTS=$HOME/dotfiles
+export EDITOR='nvim'
+export VISUAL='nvim'
+export BROWSER='firefox'
+export TERMINAL="kitty"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($DOTS/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+zstyle ':completion:*' menu select # select completions with arrow keys
+zstyle ':completion:*' group-name '' # group results by category
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
+
+# fzf
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/fzf/completion.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
+
+# asdf
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
+# load plugins
+source $ZDOTDIR/.zsh_plugins.sh

@@ -1,0 +1,47 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.config/git/config: git/config
+    ~/.config/kitty: kitty
+    ~/.config/mpv/mpv.conf: mpv/mpv.conf
+    ~/.newsboat/config: newsboat/config
+    ~/.config/nvim: nvim
+    ~/.config/ranger/rc.conf: ranger/rc.conf
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmuxinator: tmuxinator
+    ~/.zshenv: zsh/zshenv
+    ~/.zsh/.zshrc: zsh/zshrc
+    ~/.zsh/.zlogin: zsh/zlogin
+    ~/.config/awesome:
+      if: '[ `uname` = Linux ]'
+      path: awesome
+    ~/.config/compton/compton.conf:
+      if: '[ `uname` = Linux ]'
+      path: compton/compton.conf
+    ~/.config/feh/keys:
+      if: '[ `uname` = Linux ]'
+      path: feh/keys
+    ~/.config/fonts.conf:
+      if: '[ `uname` = Linux ]'
+      path: fontconfig/fonts.conf
+    ~/.config/redshift/redshift.conf:
+      if: '[ `uname` = Linux ]'
+      path: redshift/redshift.conf
+    ~/.config/rofi:
+      if: '[ `uname` = Linux ]'
+      path: rofi
+    ~/.xinitrc:
+      if: '[ `uname` = Linux ]'
+      path: xfiles/xinitrc
+    ~/.Xresources:
+      if: '[ `uname` = Linux ]'
+      path: xfiles/Xresources
