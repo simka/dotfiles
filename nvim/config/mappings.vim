@@ -1,38 +1,42 @@
-" general
+" MISC
 nnoremap Y y$
 inoremap jk <esc>
 
-" formatting and indentation
-nnoremap g= gg=Gg``
-noremap  Q  gq
-nnoremap gQ mmgggqG`m
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" dotfile manipulation
-nnoremap <Space>.e :vsplit $MYVIMRC<CR>
-nnoremap <Space>.s :source $MYVIMRC<CR>
-
-" buffers
-nnoremap <Space>bn :enew<CR>
-nnoremap <Space>bd :BD<CR>
-
-" lists
-nnoremap <Space>lq :copen<CR>
-nnoremap <Space>ll :lopen<CR>
-
-" search
+" GREP
 nnoremap <Space>g :Grep 
-nnoremap <Space>sf :Files<CR>
-nnoremap <Space>sb :Buffers<CR>
-nnoremap <Space>sh :Helptags<CR>
-nnoremap <Space>sm :Marks<CR>
+nnoremap <Space>/ :Rg
 
-" files (vim-eunuch)
+" OPEN
+nnoremap <Space>o- :Dirvish<CR>
+nnoremap <Space>oq :copen<CR>
+nnoremap <Space>ol :lopen<CR>
+nnoremap <Space>oe :terminal<CR>
+
+" FILES
+nnoremap <Space>. :Files<CR>
+nnoremap <Space><Space> :Files<CR>
+nnoremap <Space>ff :Files<CR>
+nnoremap <Space>fr :History<CR>
 nnoremap <Space>fd :Delete<CR>
 nnoremap <Space>fm :Move 
-nnoremap <Space>fr :Rename 
+nnoremap <Space>fR :Rename 
 nnoremap <Space>fw :Wall<CR>
+nnoremap <Space>fn :e %
+
+" DIRECTORIES (TO BE USED IN DIRVISH BUFFER)
+nnoremap <Space>dn :!mkdir %
+
+" BUFFERS
+nnoremap <Space>bb :Buffers<CR>
+nnoremap <Space>, :Buffers<CR>
+nnoremap <Space>bn :enew<CR>
+nnoremap <Space>bk :BD<CR>
+nnoremap <Space>bs :w %
+
+" WINDOWS
+nnoremap <Space>wv :vsplit<CR>
+nnoremap <Space>ws :split<CR>
+nnoremap <Space>ww :wincmd w<CR>
 
 " completion (coc.nvim)
 " Use tab for trigger completion with characters ahead and navigate.
