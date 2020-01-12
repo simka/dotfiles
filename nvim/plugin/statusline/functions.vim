@@ -1,4 +1,4 @@
-function! statusline#RedrawModeColors(mode)
+function RedrawModeColors(mode)
   " Normal mode
   if a:mode == 'n'
     hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
@@ -34,7 +34,7 @@ function! statusline#RedrawModeColors(mode)
   return ''
 endfunction
 
-function! statusline#SetModifiedSymbol(modified)
+function SetModifiedSymbol(modified)
     if a:modified == 1
         hi MyStatuslineModifiedBody ctermbg=0 cterm=bold ctermfg=1
     else
@@ -43,7 +43,7 @@ function! statusline#SetModifiedSymbol(modified)
     return '●'
 endfunction
 
-function! statusline#SetFiletype(filetype)
+function SetFiletype(filetype)
   if a:filetype == ''
       return '-'
   else

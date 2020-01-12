@@ -1,4 +1,4 @@
-function! plugins#init() abort
+function PluginsInit() abort
   packadd minpac
 
   call minpac#init()

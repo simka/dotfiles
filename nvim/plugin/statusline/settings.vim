@@ -1,7 +1,7 @@
 set noshowmode
 set laststatus=2
 
-set statusline=%{statusline#RedrawModeColors(mode())}
+set statusline=%{RedrawModeColors(mode())}
 " Left side items
 " =======================
 set statusline+=%#MyStatuslineAccent#
@@ -11,7 +11,7 @@ set statusline+=%#MyStatuslineFilename#\ %.50f
 set statusline+=%#MyStatuslineSeparator#\ 
 " Modified status
 set statusline+=%#MyStatuslineModified#
-set statusline+=%#MyStatuslineModifiedBody#%{statusline#SetModifiedSymbol(&modified)}
+set statusline+=%#MyStatuslineModifiedBody#%{SetModifiedSymbol(&modified)}
 set statusline+=%#MyStatuslineModified#
 " Right side items
 " =======================
@@ -32,7 +32,7 @@ set statusline+=%#MyStatuslinePercentage#
 set statusline+=\ 
 " Filetype
 set statusline+=%#MyStatuslineFiletype#
-set statusline+=%#MyStatuslineFiletypeBody#%{statusline#SetFiletype(&filetype)}
+set statusline+=%#MyStatuslineFiletypeBody#%{SetFiletype(&filetype)}
 set statusline+=%#MyStatuslineFiletype#
 
 " Setup the colors
