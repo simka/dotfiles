@@ -24,6 +24,19 @@
 (setq projectile-project-search-path '("~/code/")
       projectile-sort-order 'recently-active)
 
+;; Indents
+(setq web-mode-markup-indent-offset 2
+      web-mode-code-indent-offset 2
+      web-mode-css-indent-offset 2
+      js-indent-level 2
+      typescript-indent-level 2
+      json-reformat:indent-width 2)
+
+;; Prettier
+(setq prettier-js-args '("--single-quote"
+                         "--trailing-comma" "es5"
+                         "--config-precedence" "prefer-file"))
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
@@ -52,3 +65,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+(add-hook!
+  js2-mode 'add-node-modules-path)
+(add-hook!
+  web-mode 'add-node-modules-path)
+(add-hook!
+  js2-mode 'prettier-js-mode)
+(add-hook!
+  web-mode 'prettier-js-mode)
