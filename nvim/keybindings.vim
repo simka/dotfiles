@@ -4,7 +4,7 @@ inoremap jk <esc>
 
 " GREP
 nnoremap <Space>g :Grep 
-nnoremap <Space>/ :Rg
+nnoremap <Space>/ :Rg 
 
 " OPEN
 nnoremap <Space>o- :Dirvish<CR>
