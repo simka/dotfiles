@@ -1,0 +1,11 @@
+christian-kohler.path-intellisense
+dbaeumer.vscode-eslint
+eamodio.gitlens
+esbenp.prettier-vscode
+jpoissonnier.vscode-styled-components
+kumar-harsh.graphql-for-vscode
+liviuschera.noctis
+ms-vscode.Go
+msjsdiag.debugger-for-chrome
+PKief.material-icon-theme
+vscodevim.vim

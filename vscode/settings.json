@@ -1,0 +1,33 @@
+{
+  "debug.node.autoAttach": "on",
+  "editor.fontFamily": "Jetbrains Mono, monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.suggest.maxVisibleSuggestions": 10,
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.tabCompletion": "on",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wrappingIndent": "indent",
+  "explorer.confirmDelete": false,
+  "files.enableTrash": false,
+  "gitlens.advanced.telemetry.enabled": false,
+  "search.exclude": {
+    "**/node_modules": false
+  },
+  "search.smartCase": true,
+  "telemetry.enableTelemetry": false,
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualstar": true,
+  "workbench.colorTheme": "Noctis Uva",
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none"
+}
+
