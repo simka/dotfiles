@@ -30,6 +30,7 @@ function autostart.run()
   run_once({'discord'})
   run_once({'deluge'})
   run_once({'spotify'})
+  run_once({'syncthing-gtk --minimized'})
 end
 
 return autostart
