@@ -10,6 +10,18 @@
       recursive: true
 
 - link:
+    ~/Library/Application Support/Code/User/settings.json:
+      if: '[ `uname` = Darwin ]'
+      path: vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json:
+      if: '[ `uname` = Darwin ]'
+      path: vscode/keybindings.json
+    ~/.config/Code - OSS/User/settings.json:
+      if: '[ `uname` = Linux ]'
+      path: vscode/settings.json
+    ~/.config/Code - OSS/User/keybindings.json:
+      if: '[ `uname` = Linux ]'
+      path: vscode/keybindings.json
     ~/.doom.d: doom/doom.d
     ~/.config/git/config: git/config
     ~/.config/kitty: kitty
@@ -46,3 +58,6 @@
     ~/.Xresources:
       if: '[ `uname` = Linux ]'
       path: xfiles/Xresources
+
+- shell:
+  - [cat vscode/extensions.txt | grep -v '^#' | xargs -L1 code --install-extension, Installing vscode extensions]

@@ -28,6 +28,11 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.enableExperiments": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "editor.fontSize": 12,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "git.autofetch": true
 }
 
