@@ -33,6 +33,7 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "prettier.requireConfig": true
 }
 

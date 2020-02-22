@@ -34,6 +34,7 @@
       "rootPatterns": [".flowconfig"]
     }
   },
+  "prettier.requireConfig": true,
   "suggest.echodocSupport": true,
   "tsserver.enableJavascript": true
 }
