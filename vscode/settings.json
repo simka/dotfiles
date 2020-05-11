@@ -14,6 +14,9 @@
   "editor.wrappingIndent": "indent",
   "explorer.confirmDelete": false,
   "files.enableTrash": false,
+  "files.associations": {
+    "*.tidal": "haskell"
+  },
   "gitlens.advanced.telemetry.enabled": false,
   "search.exclude": {
     "**/node_modules": false
@@ -23,7 +26,7 @@
   "vim.hlsearch": true,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
-  "workbench.colorTheme": "Noctis Uva",
+  "workbench.colorTheme": "Noctis Viola",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.enableExperiments": false,
@@ -34,6 +37,17 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
   "git.autofetch": true,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "tidalcycles.ghciPath": "~/.ghcup/bin/ghci",
+  "tidalcycles.codehelp.hover.level": "Full",
+  "tidalcycles.codehelp.completion.level": "Full",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tidalcycles.sounds.paths": [
+    "/home/simka/samples"
+  ]
 }
-
