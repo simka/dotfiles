@@ -1,5 +1,6 @@
 [core]
   excludesfile = ~/dotfiles/git/global_gitignore
+  pager = delta
 
 [user]
   email = mcj.simka@gmail.com
@@ -18,6 +19,9 @@
 
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[interactive]
+  diffFilter = delta --color-only
 
 [rerere]
   enabled = true
