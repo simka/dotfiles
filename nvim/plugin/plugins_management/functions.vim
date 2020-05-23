@@ -19,11 +19,27 @@ function PluginsInit() abort
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-commentary')
   call minpac#add('wellle/targets.vim')
-  call minpac#add('AndrewRadev/tagalong.vim')
   " }}}
   " LSP and completion {{{
   call minpac#add('neoclide/coc.nvim', { 'branch': 'release' }) " LSP
   call minpac#add('Shougo/echodoc.vim') " print docs in echo
+  " }}}
+  " Utils {{{
+  call minpac#add('christoomey/vim-tmux-navigator') " common mapping for changing vim and tmux splits
+  call minpac#add('hauleth/asyncdo.vim') " run commands asynchronously
+  call minpac#add('igemnace/vim-makery') " easy makeprg definitions for projects
+  call minpac#add('junegunn/vim-peekaboo') " show registers content when pasting or copying from one
+  call minpac#add('machakann/vim-highlightedyank') " highlight yanked text
+  call minpac#add('mhinz/vim-startify') " start screen and sessions management
+  call minpac#add('qpkorr/vim-bufkill') " close buffers with BD without closing window
+  call minpac#add('romainl/vim-cool') " hide search highlight when not searching
+  call minpac#add('romainl/vim-qf') " quicklist enhancements
+  call minpac#add('romainl/vim-qlist') " show include-search and definition-search results in quicklist
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('xtal8/traces.vim') " highlight patterns and ranges
+  call minpac#add('junegunn/goyo.vim') " focus mode
+  call minpac#add('junegunn/limelight.vim') " even focusier focus mode
   " }}}
   " Languages {{{
   call minpac#add('cakebaker/scss-syntax.vim') " scss
@@ -41,24 +57,5 @@ function PluginsInit() abort
   call minpac#add('styled-components/vim-styled-components') " styled-components
   call minpac#add('tbastos/vim-lua') " lua
   call minpac#add('tidalcycles/vim-tidal') " tidalcycles
-  " }}}
-  " Utils {{{
-  call minpac#add('christoomey/vim-tmux-navigator') " common mapping for changing vim and tmux splits
-  call minpac#add('hauleth/asyncdo.vim') " run commands asynchronously
-  call minpac#add('igemnace/vim-makery') " easy makeprg definitions for projects
-  call minpac#add('junegunn/vim-peekaboo') " show registers content when pasting or copying from one
-  call minpac#add('machakann/vim-highlightedyank') " highlight yanked text
-  call minpac#add('mhinz/vim-startify') " start screen and sessions management
-  call minpac#add('qpkorr/vim-bufkill') " close buffers with BD without closing window
-  call minpac#add('romainl/vim-cool') " hide search highlight when not searching
-  call minpac#add('romainl/vim-qf') " quicklist enhancements
-  call minpac#add('romainl/vim-qlist') " show include-search and definition-search results in quicklist
-  call minpac#add('tpope/vim-repeat')
-  call minpac#add('tpope/vim-unimpaired')
-  call minpac#add('xtal8/traces.vim') " highlight patterns and ranges
-  call minpac#add('airblade/vim-rooter') " automatically set root based on .git directory
-  call minpac#add('junegunn/goyo.vim') " focus mode
-  call minpac#add('andymass/vim-matchup') " matchit replacement
-  call minpac#add('junegunn/limelight.vim') " even focusier focus mode
   " }}}
 endfunction
