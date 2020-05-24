@@ -1,1 +1,0 @@
-setlocal formatprg=mix\ format\ -
