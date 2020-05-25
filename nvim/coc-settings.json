@@ -35,6 +35,7 @@
     }
   },
   "prettier.requireConfig": true,
+  "prettier.onlyUseLocalVersion": true,
   "suggest.echodocSupport": true,
   "tsserver.enableJavascript": true
 }
