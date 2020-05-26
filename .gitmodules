@@ -2,3 +2,106 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "nvim/pack/plugins/start/vim-go"]
+	path = nvim/pack/plugins/start/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "nvim/pack/plugins/start/vim-json"]
+	path = nvim/pack/plugins/start/vim-json
+	url = git@github.com:elzr/vim-json.git
+[submodule "nvim/pack/plugins/start/scss-syntax.vim"]
+	path = nvim/pack/plugins/start/scss-syntax.vim
+	url = git@github.com:cakebaker/scss-syntax.vim.git
+[submodule "nvim/pack/plugins/start/traces.vim"]
+	path = nvim/pack/plugins/start/traces.vim
+	url = git@github.com:markonm/traces.vim.git
+[submodule "nvim/pack/plugins/start/vim-unimpaired"]
+	path = nvim/pack/plugins/start/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "nvim/pack/plugins/start/vim-repeat"]
+	path = nvim/pack/plugins/start/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule "nvim/pack/plugins/start/vim-qlist"]
+	path = nvim/pack/plugins/start/vim-qlist
+	url = git@github.com:romainl/vim-qlist.git
+[submodule "nvim/pack/plugins/start/vim-qf"]
+	path = nvim/pack/plugins/start/vim-qf
+	url = git@github.com:romainl/vim-qf.git
+[submodule "nvim/pack/plugins/start/vim-cool"]
+	path = nvim/pack/plugins/start/vim-cool
+	url = git@github.com:romainl/vim-cool.git
+[submodule "nvim/pack/plugins/start/vim-bufkill"]
+	path = nvim/pack/plugins/start/vim-bufkill
+	url = git@github.com:qpkorr/vim-bufkill.git
+[submodule "nvim/pack/plugins/start/vim-startify"]
+	path = nvim/pack/plugins/start/vim-startify
+	url = git@github.com:mhinz/vim-startify.git
+[submodule "nvim/pack/plugins/start/vim-peekaboo"]
+	path = nvim/pack/plugins/start/vim-peekaboo
+	url = git@github.com:junegunn/vim-peekaboo.git
+[submodule "nvim/pack/plugins/start/asyncdo.vim"]
+	path = nvim/pack/plugins/start/asyncdo.vim
+	url = git@github.com:hauleth/asyncdo.vim.git
+[submodule "nvim/pack/plugins/start/vim-tmux-navigator"]
+	path = nvim/pack/plugins/start/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "nvim/pack/plugins/start/echodoc.vim"]
+	path = nvim/pack/plugins/start/echodoc.vim
+	url = git@github.com:Shougo/echodoc.vim.git
+[submodule "nvim/pack/plugins/start/coc.nvim"]
+	path = nvim/pack/plugins/start/coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+	branch = release
+[submodule "nvim/pack/plugins/start/targets.vim"]
+	path = nvim/pack/plugins/start/targets.vim
+	url = git@github.com:wellle/targets.vim.git
+[submodule "nvim/pack/plugins/start/vim-commentary"]
+	path = nvim/pack/plugins/start/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule "nvim/pack/plugins/start/vim-surround"]
+	path = nvim/pack/plugins/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "nvim/pack/plugins/start/auto-pairs"]
+	path = nvim/pack/plugins/start/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "nvim/pack/plugins/start/vim-css3-syntax"]
+	path = nvim/pack/plugins/start/vim-css3-syntax
+	url = git@github.com:hail2u/vim-css3-syntax.git
+[submodule "nvim/pack/plugins/start/vim-graphql"]
+	path = nvim/pack/plugins/start/vim-graphql
+	url = git@github.com:jparise/vim-graphql.git
+[submodule "nvim/pack/plugins/start/typescript-vim"]
+	path = nvim/pack/plugins/start/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "nvim/pack/plugins/start/vim-jsx-pretty"]
+	path = nvim/pack/plugins/start/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+[submodule "nvim/pack/plugins/start/html5.vim"]
+	path = nvim/pack/plugins/start/html5.vim
+	url = git@github.com:othree/html5.vim.git
+[submodule "nvim/pack/plugins/start/vim-javascript"]
+	path = nvim/pack/plugins/start/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "nvim/pack/plugins/start/vim-yaml"]
+	path = nvim/pack/plugins/start/vim-yaml
+	url = git@github.com:stephpy/vim-yaml.git
+[submodule "nvim/pack/plugins/start/vim-styled-components"]
+	path = nvim/pack/plugins/start/vim-styled-components
+	url = git@github.com:styled-components/vim-styled-components.git
+[submodule "nvim/pack/plugins/start/vim-lua"]
+	path = nvim/pack/plugins/start/vim-lua
+	url = git@github.com:tbastos/vim-lua.git
+[submodule "nvim/pack/plugins/start/vim-tidal"]
+	path = nvim/pack/plugins/start/vim-tidal
+	url = git@github.com:tidalcycles/vim-tidal.git
+[submodule "nvim/pack/plugins/start/vim-abolish"]
+	path = nvim/pack/plugins/start/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
+[submodule "nvim/pack/plugins/start/vim-dirvish"]
+	path = nvim/pack/plugins/start/vim-dirvish
+	url = git@github.com:justinmk/vim-dirvish.git
+[submodule "nvim/pack/plugins/start/vim-eunuch"]
+	path = nvim/pack/plugins/start/vim-eunuch
+	url = git@github.com:tpope/vim-eunuch.git
+[submodule "nvim/pack/plugins/start/fzf.vim"]
+	path = nvim/pack/plugins/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
