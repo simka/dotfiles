@@ -22,18 +22,7 @@
     "completeUnimported": true,
     "deepCompletion": true
   },
-  "languageserver": {
-    "flow": {
-      "enable": false,
-      "command": "./node_modules/.bin/flow",
-      "args": ["lsp"],
-      "filetypes": ["javascript", "javascriptreact"],
-      "initializationOptions": {},
-      "requireRootPattern": true,
-      "settings": {},
-      "rootPatterns": [".flowconfig"]
-    }
-  },
+  "javascript.validate.enable": false,
   "prettier.requireConfig": true,
   "prettier.onlyUseLocalVersion": true,
   "suggest.echodocSupport": true,
