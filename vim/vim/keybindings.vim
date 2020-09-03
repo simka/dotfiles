@@ -52,7 +52,8 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" completion (coc.nvim)
+" COC.NVIM
+nnoremap <Space>cc :CocCommand<CR> 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
