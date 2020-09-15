@@ -311,3 +311,6 @@
 [submodule "vim/vim/pack/plugins/start/vim-eunuch"]
 	path = vim/vim/pack/plugins/start/vim-eunuch
 	url = git@github.com:tpope/vim-eunuch.git
+[submodule "vim/vim/pack/plugins/start/vim-jinja"]
+	path = vim/vim/pack/plugins/start/vim-jinja
+	url = git@github.com:niftylettuce/vim-jinja.git
