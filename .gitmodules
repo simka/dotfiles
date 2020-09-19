@@ -314,3 +314,6 @@
 [submodule "vim/vim/pack/plugins/start/vim-jinja"]
 	path = vim/vim/pack/plugins/start/vim-jinja
 	url = git@github.com:niftylettuce/vim-jinja.git
+[submodule "vim/vim/pack/plugins/start/vim-pug"]
+	path = vim/vim/pack/plugins/start/vim-pug
+	url = git://github.com/digitaltoad/vim-pug.git
