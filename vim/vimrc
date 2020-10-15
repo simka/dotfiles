@@ -33,24 +33,11 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 Plug 'junegunn/vim-peekaboo' " show registers
 Plug 'justinmk/vim-dirvish' " netrw replacement
 Plug 'markonm/traces.vim' " highlight patterns
+Plug 'mattn/vim-lsp-settings' " helper for LSP client
 Plug 'mhinz/vim-startify' " start screen
 let g:startify_session_dir = '~/.local/share/nvim/sessions/'
 let g:startify_lists = [
@@ -63,6 +50,25 @@ let g:startify_session_persistence = 1
 let g:startify_change_to_dir = 0
 let g:startify_session_sort = 1
 let g:startify_custom_header = ''
+Plug 'prabirshrestha/asyncomplete-lsp.vim' " completion source
+Plug 'prabirshrestha/asyncomplete.vim' " completion
+Plug 'prabirshrestha/vim-lsp' " LSP client
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signs_error = {'text': '■'}
+let g:lsp_signs_warning = {'text': '▲'}
+let g:lsp_signs_hint = {'text': '●'}
+let g:lsp_signs_priority_map = {
+  \'LspError': 11,
+  \'LspWarning': 10,
+  \'LspHint': 9,
+  \}
+let g:lsp_virtual_text_prefix = " ‣ "
+highlight link LspErrorText Error
+highlight link LspErrorVirtual Comment
+highlight link LspWarningText Underlined
+highlight link LspWarningVirtual Comment
+highlight link LspHintVirtual Comment
 Plug 'qpkorr/vim-bufkill' " close buffer helper
 Plug 'romainl/vim-cool' " search highlight
 Plug 'romainl/vim-qf' " quickfix improvements
@@ -83,8 +89,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient
+" disable vim-go :GoDef short cut (gd), this is handled by LSP client
 let g:go_def_mapping_enabled = 0
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jparise/vim-graphql'
