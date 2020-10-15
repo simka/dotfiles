@@ -23,6 +23,7 @@
       if: '[ `uname` = Linux ]'
       path: vscode/keybindings.json
     ~/.doom.d: doom/doom.d
+    ~/.config/alacritty: alacritty
     ~/.config/git/config: git/config
     ~/.config/kitty: kitty
     ~/.config/mpv/mpv.conf: mpv/mpv.conf
