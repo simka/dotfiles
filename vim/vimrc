@@ -25,6 +25,7 @@ let g:loaded_netrw = 1
 let g:netrw_loaded_netrwPlugin = 1
 
 Plug 'adigitoleo/vim-mellow' " colorscheme
+Plug 'axvr/photon.vim' " colorscheme
 Plug 'christoomey/vim-tmux-navigator' " tmux integration
 Plug 'jiangmiao/auto-pairs' " auto close parens etc.
 Plug 'junegunn/fzf.vim' " fuzzy search
@@ -66,8 +67,9 @@ let g:lsp_signs_priority_map = {
 let g:lsp_virtual_text_prefix = " ‣ "
 highlight link LspErrorText Error
 highlight link LspErrorVirtual Comment
-highlight link LspWarningText Underlined
+highlight link LspWarningText Warning
 highlight link LspWarningVirtual Comment
+highlight link LspHintText Comment
 highlight link LspHintVirtual Comment
 Plug 'qpkorr/vim-bufkill' " close buffer helper
 Plug 'romainl/vim-cool' " search highlight
@@ -94,9 +96,13 @@ let g:go_def_mapping_enabled = 0
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
+let g:typescript_indent_disable = 1
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 let g:javascript_plugin_flow = 1
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+let g:prettier#exec_cmd_async = 1
 Plug 'stephpy/vim-yaml'
 Plug 'styled-components/vim-styled-components'
 Plug 'tbastos/vim-lua'
@@ -109,7 +115,7 @@ call plug#end()
 " UI {{{
 set termguicolors
 set background=dark
-colorscheme mellow
+colorscheme photon
 set cursorline " highlight current line
 set number relativenumber " set relative line numbers
 set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:· " show invisibles

@@ -57,3 +57,13 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
+
+" LSP
+nmap <silent> <Space>ld <Plug>(lsp-definition)
+nmap <silent> <Space>lr <Plug>(lsp-references)
+nmap <silent> <Space>lh <Plug>(lsp-hover)
+nmap <silent> <Space>ldd <Plug>(lsp-document-diagnostics)
+nmap <silent> <Space>lf <Plug>(lsp-document-format)
+
+" FORMATTING
+nnoremap <Space>p :Prettier<CR>
