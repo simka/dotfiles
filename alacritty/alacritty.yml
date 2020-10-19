@@ -1,7 +1,7 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 schemes:
-    mellow_light: &light
+    mellow_light: &mellowlight
 
         primary:
             background: '#F2DDBC'
@@ -27,7 +27,7 @@ schemes:
             cyan:       '#D47D49'
             white:      '#F2DDBC'
 
-    mellow_dark: &dark
+    mellow_dark: &mellowdark
 
         primary:
             background: '#0F0908'
@@ -52,6 +52,32 @@ schemes:
             magenta:    '#8A4B53'
             cyan:       '#D47D49'
             white:      '#ECCD9D'
+
+    photon: &photon
+
+        primary:
+            background: '#262626'
+            foreground: '#c6c6c6'
+
+        normal:
+            black:      '#262626'
+            red:        '#af5f87'
+            green:      '#87af87'
+            yellow:     '#d7af5f'
+            blue:       '#767676'
+            magenta:    '#af87d7'
+            cyan:       '#3a3a3a'
+            white:      '#626262'
+
+        bright:
+            black:      '#3a3a3a'
+            red:        '#af5f87'
+            green:      '#87af87'
+            yellow:     '#d7af5f'
+            blue:       '#767676'
+            magenta:    '#af87d7'
+            cyan:       '#3a3a3a'
+            white:      '#c6c6c6'
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -216,7 +242,7 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-colors: *dark
+colors: *photon
   # Default colors
   #primary:
   #  background: '#1d1f21'
