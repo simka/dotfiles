@@ -39,6 +39,9 @@ Plug 'junegunn/vim-peekaboo' " show registers
 Plug 'justinmk/vim-dirvish' " netrw replacement
 Plug 'markonm/traces.vim' " highlight patterns
 Plug 'mattn/vim-lsp-settings' " helper for LSP client
+let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'eslint-language-server']
+let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server']
+let g:lsp_settings_filetype_typescriptreact = ['typescript-language-server', 'eslint-language-server']
 Plug 'mhinz/vim-startify' " start screen
 let g:startify_session_dir = '~/.local/share/nvim/sessions/'
 let g:startify_lists = [
