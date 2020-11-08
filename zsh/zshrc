@@ -2,7 +2,7 @@ export DOTS=$HOME/dotfiles
 export EDITOR='nvim'
 export VISUAL='nvim'
 export BROWSER='firefox'
-export TERMINAL="kitty"
+export TERMINAL="alacritty"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
@@ -60,3 +60,5 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
 
+# prompt
+eval "$(starship init zsh)"

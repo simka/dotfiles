@@ -2,7 +2,6 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-completions
 zdharma/fast-syntax-highlighting
-denysdovhan/spaceship-prompt
 lukechilds/zsh-better-npm-completion
 buonomo/yarn-completion
 djui/alias-tips

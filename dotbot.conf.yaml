@@ -10,25 +10,12 @@
       recursive: true
 
 - link:
-    ~/Library/Application Support/Code/User/settings.json:
-      if: '[ `uname` = Darwin ]'
-      path: vscode/settings.json
-    ~/Library/Application Support/Code/User/keybindings.json:
-      if: '[ `uname` = Darwin ]'
-      path: vscode/keybindings.json
-    ~/.config/Code - OSS/User/settings.json:
-      if: '[ `uname` = Linux ]'
-      path: vscode/settings.json
-    ~/.config/Code - OSS/User/keybindings.json:
-      if: '[ `uname` = Linux ]'
-      path: vscode/keybindings.json
-    ~/.doom.d: doom/doom.d
     ~/.config/alacritty: alacritty
     ~/.config/git/config: git/config
-    ~/.config/kitty: kitty
     ~/.config/mpv/mpv.conf: mpv/mpv.conf
     ~/.newsboat/config: newsboat/config
     ~/.config/nvim: nvim
+    ~/.config/systemd/user/ssh-agent.service: systemd/user/ssh-agent.service
     ~/.config/ranger/rc.conf: ranger/rc.conf
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmuxinator: tmuxinator
@@ -36,31 +23,20 @@
     ~/.vimrc: vim/vimrc
     ~/.zshenv: zsh/zshenv
     ~/.zsh/.zshrc: zsh/zshrc
-    ~/.zsh/.zlogin: zsh/zlogin
     ~/.config/awesome:
       if: '[ `uname` = Linux ]'
       path: awesome
-    ~/.config/compton/compton.conf:
-      if: '[ `uname` = Linux ]'
-      path: compton/compton.conf
-    ~/.config/feh/keys:
-      if: '[ `uname` = Linux ]'
-      path: feh/keys
-    ~/.config/fonts.conf:
-      if: '[ `uname` = Linux ]'
-      path: fontconfig/fonts.conf
     ~/.config/redshift/redshift.conf:
       if: '[ `uname` = Linux ]'
       path: redshift/redshift.conf
     ~/.config/rofi:
       if: '[ `uname` = Linux ]'
       path: rofi
-    ~/.xinitrc:
-      if: '[ `uname` = Linux ]'
-      path: xfiles/xinitrc
-    ~/.Xresources:
-      if: '[ `uname` = Linux ]'
-      path: xfiles/Xresources
 
 - shell:
-  - [cat vscode/extensions.txt | grep -v '^#' | xargs -L1 code --install-extension, Installing vscode extensions]
+    - yay -S --needed - < ./packages/manjaro.txt
+    - sudo groupadd audio
+    - sudo usermod -a -G audio $USER
+    - sudo sed -i 's/^load-module module-suspend-on-idle/#load-module module-suspend-on-idle/g' /etc/pulse/default.pa
+    - antibody bundle < ./zsh/zsh_plugins.txt > ~/.zsh/.zsh_plugins.sh
+    - nvm install node
