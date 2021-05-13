@@ -57,11 +57,9 @@ require('packer').startup(function()
   use 'justinmk/vim-dirvish' -- netrw replacement
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
+    requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('gitsigns').setup()
+      require('gitsigns').setup {}
     end
   }
   use { 'lukas-reineke/indent-blankline.nvim', branch="lua" } -- Add indentation guides even on blank lines
