@@ -28,8 +28,11 @@ run thunar --daemon
 run pa-applet
 run pamac-tray
 run nitrogen --restore
+run spotify
 run keepassxc
 run cadence --minimized
+run mullvad-vpn
+run syncthing-gtk
 
 ## The following are not included in minimal edition by default
 ## but autorun.sh will pick them up if you install them

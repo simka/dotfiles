@@ -17,6 +17,7 @@ gnucash
 go
 htop
 jack2
+keychain
 lazygit
 most
 mpv

@@ -13,9 +13,10 @@
     ~/.config/alacritty: alacritty
     ~/.config/git/config: git/config
     ~/.config/mpv/mpv.conf: mpv/mpv.conf
+    ~/.config/starship.toml: starship/starship.toml
     ~/.newsboat/config: newsboat/config
     ~/.config/nvim: nvim
-    ~/.config/systemd/user/ssh-agent.service: systemd/user/ssh-agent.service
+    ~/.nvm/default-packages: nvm/default-packages
     ~/.config/ranger/rc.conf: ranger/rc.conf
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmuxinator: tmuxinator

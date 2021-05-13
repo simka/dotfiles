@@ -1,0 +1,4 @@
+format = """
+[┌───────────────────>](bold green)
+[│](bold green)$directory$git_branch$git_commit$git_state$nodejs$golang$cmd_duration$jobs
+[└─>](bold green) """

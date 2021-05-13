@@ -1,1 +1,2 @@
+eval `keychain --eval --agents ssh github`
 export ZDOTDIR=$HOME/.zsh
