@@ -1,84 +1,4 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-schemes:
-    mellow_light: &mellowlight
-
-        primary:
-            background: '#F2DDBC'
-            foreground: '#0F0908'
-
-        normal:
-            black:      '#0F0908'
-            red:        '#AF0032'
-            green:      '#4C6E25'
-            yellow:     '#A67458'
-            blue:       '#573E55'
-            magenta:    '#66292F'
-            cyan:       '#BF472C'
-            white:      '#E0CCAE'
-
-        bright:
-            black:      '#3D241F'
-            red:        '#FF7477'
-            green:      '#84BF40'
-            yellow:     '#F5BB89'
-            blue:       '#8A7B85'
-            magenta:    '#8A4B53'
-            cyan:       '#D47D49'
-            white:      '#F2DDBC'
-
-    mellow_dark: &mellowdark
-
-        primary:
-            background: '#0F0908'
-            foreground: '#ECCD9D'
-
-        normal:
-            black:      '#0F0908'
-            red:        '#AF0032'
-            green:      '#577E2A'
-            yellow:     '#BF9169'
-            blue:       '#896186'
-            magenta:    '#66292F'
-            cyan:       '#BF472C'
-            white:      '#D3C1A6'
-
-        bright:
-            black:      '#3D241F'
-            red:        '#FF7477'
-            green:      '#84BF40'
-            yellow:     '#F5BB89'
-            blue:       '#9F939B'
-            magenta:    '#8A4B53'
-            cyan:       '#D47D49'
-            white:      '#ECCD9D'
-
-    photon: &photon
-
-        primary:
-            background: '#262626'
-            foreground: '#c6c6c6'
-
-        normal:
-            black:      '#262626'
-            red:        '#af5f87'
-            green:      '#87af87'
-            yellow:     '#d7af5f'
-            blue:       '#767676'
-            magenta:    '#af87d7'
-            cyan:       '#3a3a3a'
-            white:      '#626262'
-
-        bright:
-            black:      '#3a3a3a'
-            red:        '#af5f87'
-            green:      '#87af87'
-            yellow:     '#d7af5f'
-            blue:       '#767676'
-            magenta:    '#af87d7'
-            cyan:       '#3a3a3a'
-            white:      '#c6c6c6'
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -241,8 +161,41 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x24283b'
+    foreground: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black:   '0x1D202F'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+    
+  
 # Colors (Tomorrow Night)
-colors: *photon
   # Default colors
   #primary:
   #  background: '#1d1f21'

@@ -18,17 +18,52 @@ local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'       -- Package manager
   use 'christoomey/vim-tmux-navigator' -- Tmux integration
-  use 'hrsh7th/nvim-compe'           -- Autocompletion plugin
-  use 'itchyny/lightline.vim'        -- Fancier statusline
-  vim.g.lightline = { colorscheme = 'onedark';
-        active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } };
-        component_function = { gitbranch = 'fugitive#head', };
+  use 'folke/tokyonight.nvim' -- theme
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {}
+    end
   }
-
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'tokyonight',
+        },
+        sections = {
+          lualine_a = {'mode'},
+          lualine_b = {'branch'},
+          lualine_c = {'filename'},
+          lualine_x = {'filetype'},
+          lualine_y = {'progress'},
+          lualine_z = {'location'}
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = {'filename'},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {}
+        }
+      }
+    end
+  }
+  use 'hrsh7th/nvim-compe'           -- Autocompletion plugin
   use 'jiangmiao/auto-pairs' -- automatic parens insertion/removal
-  use 'joshdick/onedark.vim'         -- Theme inspired by Atom
   use 'justinmk/vim-dirvish' -- netrw replacement
-  use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} } -- Add git related info in the signs columns and popups
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   use { 'lukas-reineke/indent-blankline.nvim', branch="lua" } -- Add indentation guides even on blank lines
   vim.g.indent_blankline_char = "┊"
   vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
@@ -38,7 +73,24 @@ require('packer').startup(function()
   use 'markonm/traces.vim' -- highlight patterns
   use 'mhinz/vim-startify' -- start screen
   use 'neovim/nvim-lspconfig'        -- Collection of configurations for built-in LSP client
-  use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} } -- UI to select things (files, grep results, open buffers...)
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'kyazdani42/nvim-web-devicons', opt = true}},
+    config = function()
+      require('telescope').setup{
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-u>"] = false,
+              ["<C-d>"] = false,
+            },
+          },
+          generic_sorter = require'telescope.sorters'.get_fzy_sorter,
+          file_sorter = require'telescope.sorters'.get_fzy_sorter,
+        }
+      }
+    end
+  }
   use 'qpkorr/vim-bufkill' -- close buffer helper
   use 'romainl/vim-cool' -- search highlight
   use 'romainl/vim-qf' -- quickfix improvements

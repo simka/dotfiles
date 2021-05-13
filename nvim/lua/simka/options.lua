@@ -1,7 +1,5 @@
 --Set colorscheme
-vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme tokyonight]]
 
 --Do not save when switching buffers
 vim.o.hidden = true

@@ -1,7 +1,8 @@
 require('simka/plugins')
-require('simka/telescope')
 require('simka/options')
 require('simka/keybindings')
+require('simka/lsp')
+require('simka/completion')
 
 -- Highlight on yank
 vim.api.nvim_exec([[
@@ -11,5 +12,3 @@ vim.api.nvim_exec([[
   augroup end
 ]], false)
 
-require('simka/lsp')
-require('simka/completion')

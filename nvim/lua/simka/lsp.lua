@@ -22,7 +22,7 @@ local on_attach = function(_client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'cssls', 'flow', 'gopls', 'html', 'tsserver', 'diagnosticls' }
+local servers = { 'cssls', 'flow', 'gopls', 'html', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
