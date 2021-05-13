@@ -32,10 +32,11 @@ wk.register({
     s = {
       name = "+search",
       h = { "<cmd>lua require('telescope.builtin').search_history()<cr>", "history", noremap = false },
-    }
+    },
+    p = "which_key_ignore",
+    ["!"] = "which_key_ignore",
   }
 })
- 
 
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap=true, expr = true, silent = true })
