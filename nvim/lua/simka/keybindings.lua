@@ -7,31 +7,36 @@ vim.g.maplocalleader = " "
 
 wk.register({
   ["<space>"] = {
-    ["/"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep", noremap = false },
-    ["<space>"] = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "grep word under cursor", noremap = false },
+    ["/"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
+    ["<space>"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find" },
     w = {
       name = "+window",
-      s = { ":vsplit<cr>", "horizontal split", noremap = false },
-      v = { ":vsplit<cr>", "vertical split", noremap = false },
+      s = { ":vsplit<cr>", "horizontal split" },
+      v = { ":vsplit<cr>", "vertical split" },
     },
     f = {
       name = "+files",
-      e = { "<cmd>lua require('telescope.builtin').file_browser()<cr>", "explore", noremap = false },
-      f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find", noremap = false },
-      r = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", "recent", noremap = false },
+      e = { "<cmd>lua require('telescope.builtin').file_browser()<cr>", "explore" },
+      f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find" },
+      r = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", "recent" },
     },
     b = {
       name = "+buffers",
-      f = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "find", noremap = false },
+      f = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "find" },
+    },
+    g = {
+      name = "+grep",
+      g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "live" },
+      w = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "word under cursor" },
     },
     c = {
       name = "+commands",
-      f = { "<cmd>lua require('telescope.builtin').commands()<cr>", "find", noremap = false },
-      h = { "<cmd>lua require('telescope.builtin').command_history()<cr>", "history", noremap = false },
+      f = { "<cmd>lua require('telescope.builtin').commands()<cr>", "find" },
+      h = { "<cmd>lua require('telescope.builtin').command_history()<cr>", "history" },
     },
     s = {
       name = "+search",
-      h = { "<cmd>lua require('telescope.builtin').search_history()<cr>", "history", noremap = false },
+      h = { "<cmd>lua require('telescope.builtin').search_history()<cr>", "history" },
     },
     p = "which_key_ignore",
     ["!"] = "which_key_ignore",
