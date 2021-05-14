@@ -65,7 +65,7 @@ require('packer').startup(function()
   use { 'lukas-reineke/indent-blankline.nvim', branch="lua" } -- Add indentation guides even on blank lines
   vim.g.indent_blankline_char = "┊"
   vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
-  vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile'}
+  vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile', 'startify'}
   vim.g.indent_blankline_char_highlight = 'LineNr'
 
   use 'markonm/traces.vim' -- highlight patterns
