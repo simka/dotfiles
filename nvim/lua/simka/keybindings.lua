@@ -11,7 +11,7 @@ wk.register({
     ["<space>"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find" },
     w = {
       name = "+window",
-      s = { ":vsplit<cr>", "horizontal split" },
+      s = { ":split<cr>", "horizontal split" },
       v = { ":vsplit<cr>", "vertical split" },
     },
     f = {

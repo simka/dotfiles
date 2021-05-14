@@ -7,7 +7,6 @@ local on_attach = function(_client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -22,10 +21,26 @@ local on_attach = function(_client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'cssls', 'flow', 'gopls', 'html', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
+nvim_lsp.cssls.setup {
+  on_attach = on_attach
+}
+
+nvim_lsp.html.setup {
+  on_attach = on_attach
+}
+
+nvim_lsp.tsserver.setup {
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  on_attach = on_attach
+}
+
+nvim_lsp.flow.setup {
+  on_attach = on_attach
+}
+
+nvim_lsp.gopls.setup {
+  on_attach = on_attach
+}
 
 local sumneko_root_path = vim.fn.getenv("HOME").."/.local/bin/sumneko_lua" -- Change to your sumneko root installation
 local sumneko_binary_path = "/bin/linux/lua-language-server" -- Change to your OS specific output folder

@@ -17,6 +17,7 @@ vim.api.nvim_exec([[
 local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'       -- Package manager
+  use 'airblade/vim-rooter' -- auto set cwd as project root
   use 'christoomey/vim-tmux-navigator' -- Tmux integration
   use 'folke/tokyonight.nvim' -- theme
   use {
