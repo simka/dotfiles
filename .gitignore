@@ -1,2 +1,3 @@
 /vim/vim/plugged
 /vim/vim/autoload/plug.vim
+nvim/plugin/packer_complied.vim
