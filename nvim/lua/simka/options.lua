@@ -28,14 +28,21 @@ vim.wo.signcolumn="yes"
 vim.o.splitbelow = true
 vim.o.splitright = true
 
--- everything below needs commentary/checking if it's necessary
+-- highlight cursorline
 vim.o.cursorline = true
+
+-- use relative linenumbers
 vim.wo.number = true
 vim.wo.relativenumber = true
-vim.o.scrolloff = 15
+
+-- use system clipboard by default
+vim.cmd[[set clipboard+=unnamedplus]]
+
+-- indentation
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.expandtab = true
---Add map to enter paste mode
-vim.o.pastetoggle="<F3>"
+
+-- always show 15 lines between cursorline and top/bottom
+vim.o.scrolloff = 15
