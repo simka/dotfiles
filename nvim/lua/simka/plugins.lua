@@ -21,6 +21,13 @@ require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator' -- Tmux integration
   use 'folke/tokyonight.nvim' -- theme
   use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end
+  }
+  use {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup {}
