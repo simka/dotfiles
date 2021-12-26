@@ -1,5 +1,3 @@
-vscode-css-languageserver-bin
-vscode-html-languageserver-bin
 typescript
 typescript-language-server
-diagnostic-languageserver
+vscode-langservers-extracted

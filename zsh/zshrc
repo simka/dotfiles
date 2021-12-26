@@ -53,13 +53,11 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 # load plugins
 source $ZDOTDIR/.zsh_plugins.sh
 
-# fzf
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fi
+# nix home-manager
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+eval "$(direnv hook zsh)"
 
 # prompt
 eval "$(starship init zsh)"
+

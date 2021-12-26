@@ -2,6 +2,10 @@
 ###################
 .makery.json
 
+# Env management #
+###################
+.envrc
+
 # Version managers #
 ###################
 .tool-versions

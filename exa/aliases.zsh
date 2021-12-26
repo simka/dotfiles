@@ -1,4 +1,5 @@
-alias ld='exa -d */'        # only directories
-alias ll='exa -la'          # all
-alias lll='exa -lagh --git'  # all with details
-
+alias ls='exa';
+alias ll='exa -l';
+alias la='exa -a';
+alias lt='exa --tree';
+alias lla='exa -la';
