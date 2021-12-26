@@ -115,6 +115,12 @@ vim.wo.relativenumber = true
 -- always show 15 lines between cursorline and top/bottom
 vim.o.scrolloff = 30
 
+-- tabs/spaces
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.cmd [[colorscheme dracula]]
