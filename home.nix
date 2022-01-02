@@ -14,6 +14,7 @@
     pkgs.neovim
     pkgs.starship
     pkgs.ripgrep
+    pkgs.yarn
   ];
 
   home.stateVersion = "22.05";
